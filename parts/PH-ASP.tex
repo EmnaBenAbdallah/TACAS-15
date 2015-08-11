@@ -18,7 +18,7 @@
 	Note that $\bot$ can never become true.
 	
 	In the ASP paradigm, the search of solutions consists in computing answer sets of answer set program.
-	An answer set for a program is defined by Gelfond and Lifschitz \cite{DBLP:conf/iclp/GelfondL88} as follow.
+	An answer set for a program is defined by Gelfond and Lifschitz \cite{DBLP:conf/iclp/GelfondL88} as follows.
 	An interpretation $I$ is a finite set of propositional atoms.
 	An atom $a$ is true under $I$ if $a \in I$, and false otherwise.
 	A rule $r$ of form \ref{rule} is true under $I$ if $\{a1,\ \dots,\ a_{m}\} \subseteq I$ and $\{a_{m+1},\ \ldots,\ a_{n}\} \cap I = \emptyset$ implies $a_{0} \in\ I$.
@@ -33,7 +33,6 @@
 PH network is easy to be formulated in ASP. Indeed we need only three predicates to define the whole network:
 \texttt{"sort"} to define sorts, \texttt{"process"} for the processes and \texttt{"action"} for the network actions.
 In \cite{MOVEP14}, we already showed the interest of ASP regarding Process Hitting (without plural actions, nor delays). 
-In this paper, we developped a method to find the fixed points of a PH network and solving the problem of reachability.
 We will see in example \ref{ex1:asp-ph} how a PH network is defined with these predicates.
 
 
@@ -63,7 +62,7 @@ We can take the example given in figure \ref{fig:ph-plurial} and consider that t
 process("x", 0..1). process("y", 0..1). process("z", 0..1). %\label{ASPprocess2}
 action("x",1,"y",1,"z",0,1,D). %\label{pluralaction}
 \end{lstlisting}
-The number of indegree in this action $i=2$, there is only 2 hitters. It is possible to have an indegree greater than $2$. We will show later that the number of the maximum indegree should be an input for in our algorithm.
+The number of indegree in this action $i=2$, there is only 2 hitters. It is possible to have an indegree greater than $2$. We will show later that the number of the maximum indegree should be an input for our algorithm.
 \end{example}
 
 The predicate \texttt{action} represents the ordinary actions as well as the plural actions. Indeed an ordinary action is a plural action with an indegree $1$. Moreover all the ordinary actions are timed actions with a delay equal to $1$ unit of time. Every action needs at least one step to be played. For example, the action \texttt{action("a",0,"b",1,0)} is equivalent to \texttt{action("a",0,"b",1,0,1)}

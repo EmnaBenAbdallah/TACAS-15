@@ -19,7 +19,7 @@ Indeed, $PC$ and $G$ respectively change their state $7$ hours and $5$ hours aft
 \label{fig:circadian_clock}
 \end{figure}
 
-The left part of Figure \ref{fig:PH_circadian} shows the circadian clock represented as a Process Hitting with timed plural actions.
+The left part of \pref{fig:PH_circadian} shows the circadian clock represented as a Process Hitting with timed plural actions.
 Here, the light $L$, the gene $PC$ and $G$ are represented by sorts with two processes.
 The light clock is represented by an autonomous temporized sort: there are only auto-actions.
 Actions are represented by edges as follows: when a node have incoming edge its the target of an action and the hitters of this action are the nodes where those edges are coming.
@@ -60,8 +60,9 @@ All experiments are run with a ASP implementation of Algorithm \ref{alg:PHC_ap} 
 	\texttt{{\ssmall action("L",1, "PC",1, "G",1,0, h).}} 
 
 	\end{minipage}
-	\label{fig:PH_circadian}
 	\caption{Representation of circadian clock in Process Hitting (left) and the equivalent ASP representation (right). The value $"a", "b", ..., "h"$ represent the delays in actions. }
+		\label{fig:PH_circadian}
+
 	\end{figure}
 %
 

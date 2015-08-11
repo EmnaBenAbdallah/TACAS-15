@@ -24,7 +24,7 @@ called respectively \emph{hitter}, \emph{target} and
 We also call a \emph{self-hit} any action whose hitter and target sorts are the same,
 that is, of the form: $\PHfrappe{a_i}{a_i}{a_k}$.
 
-The PH is therefore a restriction of synchronous automata, where each transition
+The PH is therefore a restriction of asynchronous automata, where each transition
 changes the local state of exactly one automaton,
 and is triggered by the local states of at most two distinct automata.
 This restriction in the form of the actions was chosen to permit
@@ -90,7 +90,7 @@ A PH model example with three sorts: $a$, $b$ and $z$ ($a$ is either at level 0 
 A state of a given PH consists in a set of active processes containing a single process of each sort.
 The active process of a given sort $a \in \PHs$ in a state $s \in \PHl$
 is noted $\PHget{s}{a}$.
-For any given process $a_i$ we also note: $a_i \in s$ if and only if $\PHget{s}{a} = a_i$. The dynamic of the PH networks is satisfied thanks to the actions. Indeed, the transition from one state $s_1$ to its successor $s_2$ is done when there is a playable action (definition \ref{def:playableAction}) at $s_1$. After each transition only one sort, or one component, changes its level from one process to another.
+For any given process $a_i$ we also note: $a_i \in s$ if and only if $\PHget{s}{a} = a_i$. The dynamic of the PH networks is performed thanks to the actions. Indeed, the transition from one state $s_1$ to its successor $s_2$ is done when there is a playable action (definition \ref{def:playableAction}) at $s_1$. After each transition only one sort, or one component, changes its level from one process to another.
 
 It should be noted that during these last years the Process Hitting framework was gradually enriched with new type of sorts like cooperative sorts and new actions like plural actions \cite{folschette-phd-14}, actions with priority \cite{FPMR13-CS2Bio} and actions with delay.
 
@@ -192,7 +192,7 @@ In this model, two kinds of transitions may occur: \emph{dense-time} transitions
 \begin{definition}[Semantics of a dense-time Process Hitting]
 \label{def:semantic}
 Let $\PH = (\PHs,\PHl,\PHap)$ be a dense-time Process Hitting and $s \in \PHl$ be the state of $\PH$ at time $t$ .
-If there is no action in $PHa$ that is playable in $s$ the state of the system remain $s$ for all $t' > t$ (i.e. steady state).
+If there is no action in $\PHa$ that is playable in $s$ the state of the system remain $s$ for all $t' > t$ (i.e. steady state).
 Let $h = \PHfrappedelay{A}{D}{b_i}{b_j}$ be a playable action in $s$.
 If there is no temporized sort $a$ that changes its process from $a_i \in A$ to $a_j \not \in A$ while playing $h$ in $s$ then the state of $\PH$ at $t+D$
 %If $h$ is playable in $s$ during $D$ units of time, the resulting state after playing $h$ 
