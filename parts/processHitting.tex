@@ -31,15 +31,15 @@ This restriction in the form of the actions was chosen to permit
 the development of efficient static analysis methods
 based on abstract interpretation \cite{PMR12-MSCS}.
 
-\begin{definition}[Process Hitting]\label{def:PH}
-  A \emph{Process Hitting} is a triple $(\PHs,\PHl,\PHa)$ where:
+\begin{definition}[Process Hitting with Plural Actions]\label{def:PH}
+  A \emph{Process Hitting} is a triple $(\PHs,\PHl,\PHa_p)$ where:
   \begin{itemize}
     \item  $\PHs = \{a,b,\dots\}$ is the finite set of \emph{sorts};
     \item  $\PHl = \prod_{a\in\PHs} \PHl_a$ is the set of \emph{states} where
       $\PHl_a = \{a_0,\dots,a_{l_a}\}$
       is the finite set of \emph{processes} of sort $a\in\Sigma$
       and $l_a$ is a positive integer, with $a\neq b\Rightarrow \PHl_a \cap \PHl_b = \emptyset$;
-    \item $\PHa$ = \{ $\PHfrappe{A}{b_j}{b_k}$ with $A \in \PHl^{\diamond} \wedge b \in \PHs \wedge b_j \neq b_k \wedge$ if $b_j \in A \Rightarrow A=b_j$\} is the finite set of \emph{actions}.
+    \item $\PHa_p$ = \{ $\PHfrappe{A}{b_j}{b_k}$ with $A \in \PHl^{\diamond} \wedge b \in \PHs \wedge b_j \neq b_k \wedge$ if $b_j \in A \Rightarrow A=b_j$\} is the finite set of \emph{plural actions}.
     With $\PHl^{\diamond}$ the set of all the sub-states of $\PHl$.    
       %$\PHa$ = \{ $\PHfrappe{A}{b_j}{b_k}$ with $A \in \PHl^{\diamond} \wedge b \in \PHs \wedge b_j \neq b_k \wedge$ if $b_j \in A \Rightarrow A=b_j$ \}.With $\PHl^{\diamond}$ the set of all the sub-states of $\PHl$. 
   \end{itemize}
@@ -73,11 +73,10 @@ $\PHl_z = \{z_0, z_1, z_2\}$.
 \TState{a_1,b_1,z_0}
 \end{tikzpicture}
 \caption{
-A PH model example with three sorts: $a$, $b$ and $z$ ($a$ is either at level 0 or 1, $b$ at either level 0, 1 or 2 and $z$ at either level 0, or 1). Boxes represent the \emph{sorts} (network components), circles represent the \emph{processes} (component levels), and the 3 \emph{actions} that model the dynamic behavior are depicted by pairs of arrows in solid and dotted lines. The grayed processes stand for the possible initial state: $\PHstate{a_1, b_1, z_0}$.
+A PH model example with three sorts: $a$, $b$ and $z$ ($a$ is either at level 0 or 1, $b$ at either level 0, 1 or 2 and $z$ at either level 0, or 1). Boxes represent the \emph{sorts} (network components), circles represent the \emph{processes} (component levels), and the 3 \emph{actions} that model the dynamic behavior are depicted by pairs of arrows in solid and dotted lines. A self-action:  $\PHfrappe{a_1}{a_1}{a_0}$, a mono-action:  $\PHfrappe{b_0}{z_1}{z_0}$ and plural action  $\PHfrappe{a_0 \wedge b_1}{z_0}{z_1}$.  The grayed processes stand for the possible initial state: $\PHstate{a_1, b_1, z_0}$.
 }
 \end{figure}
 \end{example}
-
 A state of a given PH consists in a set of active processes containing a single process of each sort.
 The active process of a given sort $a \in \PHs$ in a state $s \in \PHl$
 is noted $\PHget{s}{a}$.
