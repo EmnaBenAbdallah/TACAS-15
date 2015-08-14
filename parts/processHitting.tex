@@ -14,14 +14,14 @@ and the set of active processes is called a \emph{state}.
 
 The concurrent interactions between processes are defined by a set of \emph{actions}.
 Each action is responsible for the replacement of one process by another of the same sort
-conditioned by the presence of at most one other process in the current state.
-An action is denoted by $\PHfrappe{a_i}{b_j}{b_k}$, which is read as
+conditioned by the presence of at least one other process in the current state.
+A normal action is denoted by $\PHfrappe{a_i}{b_j}{b_k}$, which is read as
 “$a_i$ \emph{hits} $b_j$ to make it \emph{bounce} to $b_k$”,
 where $a_i$, $b_j$, $b_k$ are processes of sorts $a$ and $b$,
 called respectively \emph{hitter}, \emph{target} and
-\emph{bounce} of the action.
+\emph{bounce} of the action. 
 We also call a \emph{self-hit} any action whose hitter and target sorts are the same,
-that is, of the form: $\PHfrappe{a_i}{a_i}{a_k}$.
+that is, of the form: $\PHfrappe{a_i}{a_i}{a_k}$. The original Process Hitting framework contains only actions with one hitter but it should be noted that during these last years it was gradually enriched with new type of sorts like cooperative sorts and new actions like plural actions \cite{folschette-phd-14} (at least 2 hitters), actions with priority \cite{FPMR13-CS2Bio} and actions with delay.
 
 The PH is therefore a restriction of asynchronous automata, where each transition
 changes the local state of exactly one automaton,
@@ -81,21 +81,19 @@ The active process of a given sort $a \in \PHs$ in a state $s \in \PHl$
 is noted $\PHget{s}{a}$.
 For any given process $a_i$ we also note: $a_i \in s$ if and only if $\PHget{s}{a} = a_i$. The dynamic of the PH networks is performed thanks to the actions. Indeed, the transition from one state $s_1$ to its successor $s_2$ is done when there is a playable action (definition \ref{def:playableAction}) at $s_1$. After each transition only one sort, or one component, changes its level from one process to another.
 
-It should be noted that during these last years the Process Hitting framework was gradually enriched with new type of sorts like cooperative sorts and new actions like plural actions \cite{folschette-phd-14}, actions with priority \cite{FPMR13-CS2Bio} and actions with delay.
-
 In some cases it is necessary to represent a reaction of a set of components on one component. For example in the bio-chemical reactions :$X \xrightarrow{Y} Z$ or  $X + Y \rightarrow Y + Z$, where $ X $ is a set of reactives, $ Y $ a set of catalysts and $ Z $ a set of products. % In PH network the evolution is asynchronous so we consider that $Z$ is one component. 
-Plural actions permit to represent this kind of reactions in PH. The plural is made up of two sets of processes of different sorts, which represent all the hitters and the bounces. For example the bio-chemical reaction bellow would be presented in PH by:  $\PHfrappe{X_1 \wedge Y_1}{Z_0}{Z_1}$, with $X$, $Y$ and $Z$ are the sorts, each one is either at level 0 (if it is abscent) or 1 (if it is present).
+Plural actions permit to represent this kind of reactions in PH. The plural is made up of two sets of processes of different sorts, which represent all the hitters and the bounces. For example the bio-chemical reaction above would be presented in PH by:  $\PHfrappe{X_1 \wedge Y_1}{Z_0}{Z_1}$, if we consider $X$, $Y$ and $Z$ are the sorts, each one is either at level 0 (if it is abscent) or 1 (if it is present).
 
-In some dynamics it is crucial to have information about the delays between two events (two states of a PH). Classic actions cannot exhibit this information: we just know chronology, i.e., that the state $s_2$ will be after $s_1$ in the next step but it is not possible to know chronometry, i.e., how much time this transition takes to occur. We propose to add the delay in the action attributes which is responsable of the transition between the two states. That means that this action needs to be played during a specific time so that the system does not change its state (definition \ref{def:TimedAction}).
+In some dynamics it is crucial to have information about the delays between two events (two states of a PH). Classic actions cannot exhibit this information: we just know chronology, i.e., that the state $s_2$ will be after $s_1$ in the next step but it is not possible to know chronometry, i.e., how much time this transition takes to occur. We propose to add the delay in the action attributes which is responsable of the transition between the two states. That means that this action needs to be played during a specific time so that the system does not change its state (\pref{def:TimedAction}).
 
 \begin{definition}[Timed plural action]
 \label{def:TimedAction}
 Let $\PH = (\PHs,\PHl,\PHa)$ be a process hitting and $\PHl^{\diamond}$ be the set of all the sub-states of $\PHl$.
 A timed plural action of $\PH$ is a plural action with a delay $D$: $\PHfrappedelay{A}{D}{b_i}{b_j}$ where $D \in \mathds{R}^+$, $A \in \PHl^{\diamond}$, and $b_i$, $b_j$ where  $b_i \not = b_j$ are two processes of the target sort $b$. If $b_i \in A$, $A=b_i$.
 \end{definition}
-
+To model biological networks, we used the PH framework with timed plural actions (\pref{def:PH-timed-plural}). Indeed, in the biological models that we studied we need to present not only the cooperation between the components to influence another one (plural action), but also the time that this action need to take place (delays). 
 \begin{definition}[Process Hitting with Timed Plural Actions]
-\label{def:PH-plural}
+\label{def:PH-timed-plural}
   A \emph{Process Hitting with timed plural actions} is a triple $(\PHs,\PHl,\PHap)$ where:
   \begin{itemize}
     \item  $\PHs = \{a,b,\dots\}$ is the finite set of \emph{sorts};
@@ -109,7 +107,7 @@ A timed plural action of $\PH$ is a plural action with a delay $D$: $\PHfrappede
 \end{definition}
 
 Duration of actions can now be represented in a Process Hitting model thanks to timed actions.
-Note that if all actions delays are set to 1 it is equivalent to Process Hitting without delays.
+Note that if all actions delays are set to 1 it is equivalent to Process Hitting without delays (original PH).
 The way these new actions should be used is described as follows.
 
 \begin{definition} [Playable timed plural action]
