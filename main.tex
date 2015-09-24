@@ -144,7 +144,7 @@ font=\footnotesize,inner sep=1pt]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\urldef{\mailsa}\path|{emna.ben-abdallah, morgan.magnin}@irccyn.ec-nantes.fr|    
+\urldef{\mailsa}\path|{emna.ben-abdallah, morgan.magnin, olivier.roux}@irccyn.ec-nantes.fr|    
 \urldef{\mailsb}\path|{tony_ribeiro, inoue}@nii.ac.jp|    
 \newcommand{\keywords}[1]{\par\addvspace\baselineskip
 \noindent\keywordname\enspace\ignorespaces#1}
@@ -153,22 +153,22 @@ font=\footnotesize,inner sep=1pt]
 
 \mainmatter  % start of an individual contribution
 
-\title{Revision of Delayed Biological Systems with Answer Set Programming}
+\title{Generation and revision of Delayed Biological Regulatory Systems}
 
 
 % a short form should be given in case it is too long for the running head
 \titlerunning{Revision of Delayed Biological Systems with ASP}
 
 
-\author{Emna Ben Abdallah\inst{1} \and  Tony Ribeiro \inst{2}  \and Morgan Magnin \inst{1,3} \and Katsumi Inoue \inst{3}}
+\author{Emna Ben Abdallah\inst{1} \and  Tony Ribeiro\inst{1,2}  \and Morgan Magnin\inst{1,3} \and Olivier Roux\inst{1} \and Katsumi Inoue \inst{3}}
 %
-\authorrunning{E. Ben Abdallah, T. Ribeiro, M. Magnin, K. Inoue}
+\authorrunning{E. Ben Abdallah, T. Ribeiro, M. Magnin, O.Roux, K. Inoue}
 % (feature abused for this document to repeat the title also on left hand pages)
 
 % the affiliations are given next; don't give your e-mail address
 % unless you accept that it will be published
 \institute{LUNAM Universit\'e, \'Ecole Centrale de Nantes,
- IRCCyN UMR CNRS 6597\\ (Institut de Recherche en Communications et Cybern\'etique de Nantes),
+ IRCCyN UMR CNRS 6597\\ (Institut de Recherche en Communications et Cybern\'etique de Nantes), \\
   1 rue de la No\"{e}, 44321 Nantes, France. \\
   \and
 The Graduate University for Advanced Studies (Sokendai),
@@ -188,24 +188,24 @@ National Institute of Informatics, \\
 % "llncs.dem" accompanies the document class "llncs.cls".
 %
 
-\toctitle{Revision of delayed biological systems with Answer Set Programming}
+\toctitle{Revision of delayed biological regulatory systems}
 \tocauthor{Authors' Instructions}
 \maketitle
 
 
 \begin{abstract}
 The modeling of biologicals systems relies on background knowledge, deriving either from literature %(\emph{i.e.}, previous works that have been considered valuable) 
-and/or the analysis of biological observations. But with the development of high-throughput data, there is a growing need for methods that are able to automatically revise the existing models with regard to additional observations obtained by biologists. 
-Our research aims at providing a logical approach to revise biological regulatory networks thanks to time series data, \emph{i.e.}, gene expression data depending on time. In this paper, we propose two revision methodologies for models expressed through a timed extension of the Process Hitting framework (which is a restriction, well suited for biological systems, of networks of synchronizing timed automata). The revision methods we introduce aim to make the minimum amount of modifications (addition/deletion of actions between biological components) to a given input model so that the resulting model is most consistent with the observed data. They are implemented in Answer Set Programming, which is a paradigm proven efficient to tackle knowledge representation problems. 
-We illustrate the merits of our methods in a twofold way: (1) we exhibit the benefits of such automatic approaches on a case study consisting of a qualitative model of circadian clock; (2) we lead computational experiments on various benchmarks to show the performances of our algorithms. 
+and/or the analysis of biological observations. But with the development of high-throughput data, there is a growing need for methods that are able to automatically generate ( respectively revise) the existing models with regard to new additional observations obtained by biologists. 
+Our research aims at providing a logical approach to generate (respectively to revise) biological regulatory networks thanks to time series data, \emph{i.e.}, gene expression data depending on time. In this paper, we propose new methodology for models expressed through a timed extension of the Process Hitting framework (which is a restriction, well suited for biological systems, of networks of synchronizing timed automata). The revision methods we introduce aim to make the minimum amount of modifications (addition/deletion of actions between biological components) to a given input model so that the resulting model is the most consistent as possible with the observed data. %They are implemented in Answer Set Programming, which is a paradigm proven efficient to tackle knowledge representation problems. 
+We illustrate the merits of our method in a two fold way: (1) we exhibit the benefits of such automatic approache on qualitative models proposed through Dream challenge 4; (2) we lead computational experiments on these benchmarks to show the performances of our algorithms. 
 
-\keywords{Answer Set Programming, Process Hitting, dynamic modeling, time-varying genetic networks, network revision}
+\keywords{network revision, dynamic modeling, Process Hitting, time-varying genetic networks}
 \end{abstract}
 
   \input{parts/intro}
   \input{parts/processHitting}
   % \include{parts/ASP}
-  \input{parts/PH-ASP}
+  %\input{parts/PH-ASP}
   \input{parts/CompletionPH}
   \input{parts/Evaluation}
   %\input{parts/circadianClock}
