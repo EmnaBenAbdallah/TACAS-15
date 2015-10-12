@@ -138,32 +138,35 @@ $A \subseteq s$ and $b_i \in s$. % (\ie$ \forall a_i \in A, \PHget{s}{a} = a_i$ 
 %
 %% TODO: dense timed transition system
 %
-%\begin{definition}[Semantics of a dense-time Process Hitting]
-%\label{def:semantic}
-%Let $\PH = (\PHs,\PHl,\PHap)$ be a dense-time Process Hitting and $s \in \PHl$ be the state of $\PH$ at time $t$ .
-%If there is no action in $\PHa$ that is playable in $s$ the state of the system remain $s$ for all $t' > t$ (i.e. steady state).
-%Let $h = \PHfrappedelay{A}{D}{b_i}{b_j}$ be a playable action in $s$.
-%If there is no temporized sort $a$ that changes its process from $a_i \in A$ to $a_j \not \in A$ while playing $h$ in $s$ then the state of $\PH$ at $t+D$
-%%If $h$ is playable in $s$ during $D$ units of time, the resulting state after playing $h$ 
-%is called a \emph{successor} of $s$ and
-%is denoted by $(s \play h)$,
-%where $\PHget{(s \play h)}{b} = b_k$ and
-%$\forall c \in \PHs, c \neq b \Rightarrow \PHget{(s \play h)}{c}=\PHget{s}{c}$.
-%%Between $s$ and $(s \play h)$ there is $D$ units of time where the state of the system remain $s$ .
-%\end{definition}
+\begin{definition}[Semantics of a Process Hitting with Timed Actions]
+\label{def:semantic}
+Let $\PH = (\PHs,\PHl,\PHap)$ be a dense-time Process Hitting and $s \in \PHl$ be the state of $\PH$ at time $t$ .
+If there is no action in $\PHa$ that is playable in $s$ the state of the system remain $s$ for all $t' > t$ (i.e. steady state).
+Let $h = \PHfrappedelay{A}{D}{b_i}{b_j}$ be a playable action in $s$.
+%If there is no temporized sort $a$ that changes its process from $a_i \in A$ to $a_j \not \in A$ while playing $h$ in $s$
+If $h$ is chosen as the action to be played at $s$ then the state of $\PH$ is $s$ during $D$ time steps and at $t+D$
+%If $h$ is playable in $s$ during $D$ units of time,
+the resulting state after playing $h$ 
+is called a \emph{successor} of $s$ and
+is denoted by $(s \play h)$,
+where $\PHget{(s \play h)}{b} = b_k$ and
+$\forall c \in \PHs, c \neq b \Rightarrow \PHget{(s \play h)}{c}=\PHget{s}{c}$.
+%Between $s$ and $(s \play h)$ there is $D$ units of time where the state of the system remain $s$ .
+\end{definition}
 
 Even if there already exists a few hybrid formalisms, we chose to propose this extension of the PH framework for several reasons.
 First, PH is a general framework that,
 although it was mainly used for biological networks,
 allows to represent any kind of dynamical models,
-and converters to several other representations are available.% (see section~\ref{comparison}).
+and converters to several other representations are available. % (see section~\ref{comparison}).
 Although an efficient dynamical analysis already exists for this framework,
 based on an approximation of the dynamics,
 it is interesting to identify its limits (especially the fact that previous studies were focusing only on discrete, not timed, dynamics)
 and compare them to the approach we present later in this paper.
-Finally, the particular form of the actions in a PH model allows
+Finally, the particular form of the actions in a  PH model allows
 to easily represent them in ASP,
 with one fact per action, as described in the next section.
+\textcolor{red}{COMMENT Tony: toujours un argument pour TACAS l'ASP ?}
 Other representations may have required supplementary complexity;
 for instance, a labeling would be required
 if actions could be triggered by a variable number of processes.

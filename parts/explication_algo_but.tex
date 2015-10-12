@@ -34,22 +34,22 @@ First, the method uses discritised observations as an input, thus it is necessar
 \caption{Examples of the discretization of continues time series data into bi-valued chronograms.
 Abscisse represents time and ordinate the gene expression level.
 The expression level is discretized according to a treshold fixed to the half of the gene expression value in this example.}
+\label{fig:discretization}
 \end{figure}
 
-\textcolor{red}{Summarry of the algorithm:}
+We can summarrize our method in the following steps:
 \begin{itemize}
 \item[-] Detection of changes
-\item[-] Computation of the interactions possibly reponsible of those changes
-PH:  \textit{action} : \textit{hitter(s)}, \textit{target} and \textit{delay}
+\item[-] Computation of the interactions possibly reponsible of thoses changes
 \item[-] Filtering of the candidates actions
 \item[-] Add actions to the model: completion/revision of the model
 \end{itemize}
 
 % Running example
 
-Algorithm execution:
+We will now show an example of the execution of algorithm on the chronogram of Figure \ref{fig:discretization}:
 
-Let $i$ be the maximal number of hitters in an action of a PH: {\textit the indegree}.
+%Let $i$ be the maximal number of hitters in an action of a PH: {\textit the indegree}.
 
 The first change occurs at $t_1$ = $t_{min}$ = 2,
 wich we will denote as \texttt{change(2)}.
@@ -115,21 +115,21 @@ $H_{change(6)} = \{ h_1=\PHfrappedelay{a_0}{1}{z_1}{z_0}$
 , $  h_3=\PHfrappedelay{a_0 \wedge b_0 }{1}{z_1}{z_0} \}$.
 
 After proccessing all chronograms, the candidates action are: \\
-$H_{change(2)} = \{ h_1=\PHfrappedelay{a_0}{2}{z_0}{z_1}$, $  h_2=\PHfrappedelay{b_1}{2}{z_0}{z_1}$ \\
-, \hspace{0.75cm}$  h_3=\PHfrappedelay{a_0 \wedge b_1 }{2}{z_0}{z_1} \}$.\\
-$H_{change(3)} = \{ h=\PHfrappedelay{a_0}{1}{a_0}{a_1}  \}$. \\
+$H_{change(2)} = \{ h_1=\PHfrappedelay{a_0}{2}{z_0}{z_1},  h_2=\PHfrappedelay{b_1}{2}{z_0}{z_1} \\
+,  h_3=\PHfrappedelay{a_0 \wedge b_1 }{2}{z_0}{z_1} \}$.\\
+$H_{change(3)} = \{ h_4=\PHfrappedelay{a_0}{1}{a_0}{a_1}  \}$. \\
 
-$H_{change(5)} = \{ h=\PHfrappedelay{a_1}{1}{a_1}{a_0}  \}$. \\
+$H_{change(5)} = \{ h_5=\PHfrappedelay{a_1}{1}{a_1}{a_0}  \}$. \\
 
-$H_{change(6)} = \{ h_1=\PHfrappedelay{a_0}{1}{z_1}{z_0}$ , $  h_2=\PHfrappedelay{b_0}{1}{z_1}{z_0}$ \\
-, \hspace{0.75cm} $  h_3=\PHfrappedelay{a_0 \wedge b_0 }{1}{z_1}{z_0} \}$. \\
+$H_{change(6)} = \{ h_6=\PHfrappedelay{a_0}{1}{z_1}{z_0}$ , $  h_7=\PHfrappedelay{b_0}{1}{z_1}{z_0}
+, h_8=\PHfrappedelay{a_0 \wedge b_0 }{1}{z_1}{z_0} \}$. \\
 
 At this stage of the process, all canditates actions are consistent with all observations and given regulation influences.
 Until now the method used ensured completeness: here we have the complete set of consistent action that can explain the observations.
 But in practice those set of action can be further refine using background knowledge.
 The following filtering operation can help to reduce the complexity of the model learned/revised.
 
-$1^{st}$ filter: \\
+\subsection{$1^{st}$ filter: priority on given model}
 
 If we want to minimize the number of actions added to the input PH we can consider that the action of this PH are more trustable than the generated one. Thus generated actions that only explain changes that can already be explain by given action can be discarded: $\forall t \in T$ such that $\exists$  \texttt{change(t)}, we have:
 \begin{itemize}
@@ -143,8 +143,12 @@ We have either:
 \item[•] If $H_c \cap H_{ini} = \emptyset $ then $H_{final}=H_c$
 \end{itemize}
 In practice, the change that already can be explained by the input PH can be detected before computing the candidates actions, allowing us to discard them without generating them.
+If in our running example,
+we start with $H_{ini}=\{h_ini\PHfrappedelay{a_0}{1}{z_1}{z_0}\}$,
+since the action $h_ini$ can realize $change(6)$ there is no need to generate new ones.
+Here, $H_{change(6)}$ will only consist of $h_ini = h_6$, $h_7=\PHfrappedelay{b_0}{1}{z_1}{z_0}$ and $h_8=\PHfrappedelay{a_0 \wedge b_0 }{1}{z_1}{z_0} $ will be discarded. 
 
-$2^{nd}$ filter: \\
+\subsection{$2^{nd}$ filter: strict influences (activator or inhibitor)}
 
 If knowledge about strict influences is given it can be used to discarded actions that are conflicting with those influences.
 For example, if we know that a gene $a$ influences a gene $b$ and that $a$ can only inhibit $b$, then the actions using $a$ as hitter to increase the value of $b$ are inconsistent and can be discarded.
@@ -155,7 +159,11 @@ $\forall h \in H$ such $h=\PHfrappedelay{A}{D}{b_n}{b_m}$, with $ A \in \PHl^{\d
 \item[•] If $n > m$, if $\exists G_k \in \PHl_G $ such that $G_k \xrightarrow{(+)} b$ (and $\nexists G_k \xrightarrow{(-)} b$ ) and $k \neq 0$ then $h$ can be discarded.
 \end{itemize} 
 
-$3^rd$ filter:\\
+In our running example, if we now that $b$ is an inhibitor of $z$, all actions where $a$ is used to activate $z$ can be discarded.
+Here, we have an observation where $z$ is activated in $change(2)$ where its value switches from $z_0$ to $z_1$.
+We now that $a$ as an influence on $z$ but as an inhibitor not as an activator thus the actions $h_2=\PHfrappedelay{b_1}{2}{z_0}{z_1}$ and $h_3=\PHfrappedelay{a_0 \wedge b_1 }{2}{z_0}{z_1}$ will be discarded.
+
+\subsection{$3^rd$ filter: delay merging}
 
 When the time information of observation is not perfect, the same regulation interaction may append with different delay.
 One simple solution to deal with such input can be to simply agregate action that differ only by their delay.
@@ -163,3 +171,8 @@ We can merge each action with the same hitters, $S_1,P_1,\ldots, S_n,P_n$ and th
 $\forall h_1, h_2,..., h_k \in H$ such that $h_1=\PHfrappedelay{A}{D_1}{a_n}{a_m}$, $h_2=\PHfrappedelay{A}{D_2}{a_n}{a_m}$, ..., $h_k=\PHfrappedelay{A}{D_k}{a_n}{a_m}$ with $ A \in \PHl^{\diamond}$, $a_n, a_m \in \PHl_a$ et $D_1 \neq D_2 \neq ... \neq D_k$ then : \\
 \texttt{fusion} all actions $h_1, h_2,..., h_k$ into one action $h$ $$h=\PHfrappedelay{A}{D_{average}}{a_n}{a_m}$$ such that: 
 $$D_{average} = \frac{\sum_{i=1}^k D_{i}}{k} $$
+
+For example, lets suppose that we came out with two actions $h=\PHfrappedelay{a_0}{2}{z_0}{z_1}$ and $h'=\PHfrappedelay{a_0 \wedge b_1 }{4}{z_0}{z_1}$, they will merged into $h_2=\PHfrappedelay{b_1}{3}{z_0}{z_1}$.
+If input data are perfect, usage of this merging is totally unsafe and can lead to a set of actions that cannot produce any of the observed changes in the worst case.
+The intuition behind this method is to give a first idea of how to cope with big amount of real data which are not perfect.
+The idea is that if enough observations are provided, the delay of the action will be more precise.
