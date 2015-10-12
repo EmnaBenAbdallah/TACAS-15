@@ -4,6 +4,7 @@
 \label{algo_but}
 
 In this section we demonstrate how our methode permits to generate a PH model coherent to the set of biological regulatory time series data given as an input. 
+First, the method uses discritised observations as an input, thus it is necessary to use an other method which transforms the analogic time series data to discritised time series data.
 
 %\begin{figure}[htb!]
 %Observations:\\
@@ -22,14 +23,14 @@ In this section we demonstrate how our methode permits to generate a PH model co
 
 
 % Discretization figure
-\begin{figure}[h]
-\includegraphics[width =0.3\linewidth]{images/courbes/gene-a.pdf}
-\includegraphics[width =0.3\linewidth]{images/courbes/gene-b.pdf}
-\includegraphics[width =0.3\linewidth]{images/courbes/gene-z.pdf}
+\begin{figure}[h]\centering
+\includegraphics[width =0.31\linewidth]{images/courbes/gene-a.pdf}
+\includegraphics[width =0.31\linewidth]{images/courbes/gene-b.pdf}
+\includegraphics[width =0.31\linewidth]{images/courbes/gene-z.pdf}
 
-\includegraphics[width =0.3\linewidth]{images/courbes/gene-a-disc-change.pdf}
-\includegraphics[width =0.3\linewidth]{images/courbes/gene-b-disc-change.pdf}
-\includegraphics[width =0.3\linewidth]{images/courbes/gene-z-disc-change.pdf}
+\includegraphics[width =0.31\linewidth]{images/courbes/gene-a-disc-change.pdf}
+\includegraphics[width =0.31\linewidth]{images/courbes/gene-b-disc-change.pdf}
+\includegraphics[width =0.31\linewidth]{images/courbes/gene-z-disc-change.pdf}
 \caption{Examples of the discretization of continues time series data into bi-valued chronograms.
 Abscisse represents time and ordinate the gene expression level.
 The expression level is discretized according to a treshold fixed to the half of the gene expression value in this example.}
