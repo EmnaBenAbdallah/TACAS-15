@@ -1,0 +1,1214 @@
+#obs runtime
+
+ #Threshold_i : #chronogram_i : #indegree
+
+
+ ---------- 
+ 1 : 1 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.250
+  Prepare   : 0.230
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 1 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.630
+  Prepare   : 3.600
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 2 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.240
+  Prepare   : 0.220
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 2 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.690
+  Prepare   : 3.670
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 3 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.280
+  Prepare   : 0.260
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 3 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.750
+  Prepare   : 3.720
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 4 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.930
+  Prepare   : 0.930
+  Prepro.   : 0.000
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 4 : 2 
+ ---------- 
+
+
+Models      : 1     
+Time        : 4.000
+  Prepare   : 4.000
+  Prepro.   : 0.000
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 5 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.250
+  Prepare   : 0.230
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 5 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.900
+  Prepare   : 3.880
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 6 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.260
+  Prepare   : 0.240
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 6 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.770
+  Prepare   : 3.750
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 7 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.240
+  Prepare   : 0.220
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 7 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.650
+  Prepare   : 3.620
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 8 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.250
+  Prepare   : 0.230
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 8 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 4.030
+  Prepare   : 3.990
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 9 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.300
+  Prepare   : 0.270
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 9 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 4.050
+  Prepare   : 4.030
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 10 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.280
+  Prepare   : 0.260
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 10 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.880
+  Prepare   : 3.860
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 11 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.240
+  Prepare   : 0.220
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 1 : 11 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.690
+  Prepare   : 3.660
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 1 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.250
+  Prepare   : 0.230
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 1 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.660
+  Prepare   : 3.640
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 2 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.240
+  Prepare   : 0.220
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 2 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.650
+  Prepare   : 3.620
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 3 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.270
+  Prepare   : 0.250
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 3 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 4.190
+  Prepare   : 4.160
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 4 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.980
+  Prepare   : 0.980
+  Prepro.   : 0.000
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 4 : 2 
+ ---------- 
+
+
+Models      : 1     
+Time        : 4.450
+  Prepare   : 4.450
+  Prepro.   : 0.000
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 5 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.270
+  Prepare   : 0.260
+  Prepro.   : 0.010
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 5 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.930
+  Prepare   : 3.910
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 6 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.240
+  Prepare   : 0.220
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 6 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.760
+  Prepare   : 3.720
+  Prepro.   : 0.030
+  Solving   : 0.010
+
+ ---------- 
+ 2 : 7 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.260
+  Prepare   : 0.240
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 7 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.860
+  Prepare   : 3.830
+  Prepro.   : 0.020
+  Solving   : 0.010
+
+ ---------- 
+ 2 : 8 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.280
+  Prepare   : 0.250
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 8 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.740
+  Prepare   : 3.710
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 9 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.230
+  Prepare   : 0.210
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 9 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.590
+  Prepare   : 3.560
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 10 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.230
+  Prepare   : 0.210
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 10 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.560
+  Prepare   : 3.530
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 11 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.240
+  Prepare   : 0.220
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 11 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 3.650
+  Prepare   : 3.620
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 1 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.450
+  Prepare   : 0.420
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 1 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 17.790
+  Prepare   : 17.760
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 2 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.440
+  Prepare   : 0.400
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 2 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 17.100
+  Prepare   : 17.060
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 3 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.500
+  Prepare   : 0.470
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 3 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 17.580
+  Prepare   : 17.540
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 4 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.890
+  Prepare   : 0.890
+  Prepro.   : 0.000
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 4 : 2 
+ ---------- 
+
+
+Models      : 1     
+Time        : 15.870
+  Prepare   : 15.870
+  Prepro.   : 0.000
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 5 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.470
+  Prepare   : 0.430
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 5 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 17.130
+  Prepare   : 17.090
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 6 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.440
+  Prepare   : 0.400
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 6 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 16.830
+  Prepare   : 16.800
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 7 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.450
+  Prepare   : 0.420
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 7 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 16.860
+  Prepare   : 16.830
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 8 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.450
+  Prepare   : 0.420
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 8 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 16.980
+  Prepare   : 16.950
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 9 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.440
+  Prepare   : 0.410
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 9 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 16.860
+  Prepare   : 16.840
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 10 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.440
+  Prepare   : 0.400
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 10 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 16.760
+  Prepare   : 16.730
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 11 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.450
+  Prepare   : 0.420
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 11 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 16.890
+  Prepare   : 16.860
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 1 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.730
+  Prepare   : 0.700
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 1 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 49.830
+  Prepare   : 49.790
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 2 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.710
+  Prepare   : 0.670
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 2 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 49.720
+  Prepare   : 49.680
+  Prepro.   : 0.030
+  Solving   : 0.010
+
+ ---------- 
+ 4 : 3 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.760
+  Prepare   : 0.730
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 3 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 52.870
+  Prepare   : 52.820
+  Prepro.   : 0.050
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 4 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 2.670
+  Prepare   : 2.670
+  Prepro.   : 0.000
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 4 : 2 
+ ---------- 
+
+
+Models      : 1     
+Time        : 50.220
+  Prepare   : 50.220
+  Prepro.   : 0.000
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 5 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.830
+  Prepare   : 0.780
+  Prepro.   : 0.050
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 5 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 52.820
+  Prepare   : 52.780
+  Prepro.   : 0.030
+  Solving   : 0.010
+
+ ---------- 
+ 4 : 6 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.710
+  Prepare   : 0.670
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 6 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 52.200
+  Prepare   : 52.170
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 7 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.730
+  Prepare   : 0.700
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 7 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 50.890
+  Prepare   : 50.860
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 8 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.710
+  Prepare   : 0.680
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 8 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 51.010
+  Prepare   : 50.970
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 9 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.720
+  Prepare   : 0.680
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 9 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 50.530
+  Prepare   : 50.480
+  Prepro.   : 0.050
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 10 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.740
+  Prepare   : 0.710
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 10 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 50.920
+  Prepare   : 50.880
+  Prepro.   : 0.030
+  Solving   : 0.010
+
+ ---------- 
+ 4 : 11 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.720
+  Prepare   : 0.690
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 11 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 51.010
+  Prepare   : 50.970
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 1 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.990
+  Prepare   : 0.940
+  Prepro.   : 0.050
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 1 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 119.690
+  Prepare   : 119.640
+  Prepro.   : 0.040
+  Solving   : 0.010
+
+ ---------- 
+ 5 : 2 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.980
+  Prepare   : 0.940
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 2 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 117.180
+  Prepare   : 117.130
+  Prepro.   : 0.050
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 3 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.980
+  Prepare   : 0.940
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 3 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 118.500
+  Prepare   : 118.440
+  Prepro.   : 0.060
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 4 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 2.760
+  Prepare   : 2.760
+  Prepro.   : 0.000
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 4 : 2 
+ ---------- 
+
+
+Models      : 1     
+Time        : 109.770
+  Prepare   : 109.770
+  Prepro.   : 0.000
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 5 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.980
+  Prepare   : 0.940
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 5 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 141.210
+  Prepare   : 141.010
+  Prepro.   : 0.190
+  Solving   : 0.010
+
+ ---------- 
+ 5 : 6 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 2.780
+  Prepare   : 2.740
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 6 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 331.660
+  Prepare   : 331.600
+  Prepro.   : 0.050
+  Solving   : 0.010
+
+ ---------- 
+ 5 : 7 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.940
+  Prepare   : 0.900
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 7 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 116.130
+  Prepare   : 116.070
+  Prepro.   : 0.060
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 8 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 1.020
+  Prepare   : 0.960
+  Prepro.   : 0.060
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 8 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 117.400
+  Prepare   : 117.340
+  Prepro.   : 0.060
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 9 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 1.080
+  Prepare   : 1.040
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 9 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 117.410
+  Prepare   : 117.360
+  Prepro.   : 0.040
+  Solving   : 0.010
+
+ ---------- 
+ 5 : 10 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.910
+  Prepare   : 0.870
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 10 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 117.130
+  Prepare   : 117.080
+  Prepro.   : 0.050
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 11 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 0.970
+  Prepare   : 0.930
+  Prepro.   : 0.040
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 11 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 119.510
+  Prepare   : 119.450
+  Prepro.   : 0.060
+  Solving   : 0.000

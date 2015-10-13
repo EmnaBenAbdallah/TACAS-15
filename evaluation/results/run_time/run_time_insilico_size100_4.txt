@@ -1,0 +1,115 @@
+#obs runtime
+
+ one chronogram for each threshold and indegree 
+ #Threshold_i : 1 : #indegree
+
+
+ ---------- 
+ 1 : 1 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 2.310
+  Prepare   : 2.280
+  Prepro.   : 0.020
+  Solving   : 0.010
+
+ ---------- 
+ 1 : 1 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 6.030
+  Prepare   : 6.010
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 1 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 2.280
+  Prepare   : 2.260
+  Prepro.   : 0.020
+  Solving   : 0.000
+
+ ---------- 
+ 2 : 1 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 6.050
+  Prepare   : 6.020
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 1 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 1.800
+  Prepare   : 1.770
+  Prepro.   : 0.030
+  Solving   : 0.000
+
+ ---------- 
+ 3 : 1 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 22.830
+  Prepare   : 22.780
+  Prepro.   : 0.050
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 1 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 5.490
+  Prepare   : 5.440
+  Prepro.   : 0.050
+  Solving   : 0.000
+
+ ---------- 
+ 4 : 1 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 107.360
+  Prepare   : 107.210
+  Prepro.   : 0.140
+  Solving   : 0.010
+
+ ---------- 
+ 5 : 1 : 1 
+ ---------- 
+
+
+Models      : 1     
+Time        : 4.940
+  Prepare   : 4.890
+  Prepro.   : 0.050
+  Solving   : 0.000
+
+ ---------- 
+ 5 : 1 : 2 
+ ---------- 
+
+
+Models      : 1+    
+Time        : 351.290
+  Prepare   : 351.010
+  Prepro.   : 0.260
+  Solving   : 0.020
