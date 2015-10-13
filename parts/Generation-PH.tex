@@ -1,6 +1,12 @@
 % Completion of PH network (Circadian clock)
 
 \section{Generation of PH models}
+In this section we propose an algorithm to construct and/or revise Process Hitting models.
+We assume that new time series data observation are provided as a {\it chronogram} of size $T$:
+the value of each variable is given for each time step $t$, $0 \leq t \leq T$, through a time interval discretization (see example \pref{fig:discretization}).   
+This algorithm takes as input a Process Hitting and a observation data of genes evolutions of this network.
+Knowing the genes' influences (or assuming all possible influences),
+this algorithm will generate a model or complete the input model by adding the delayed actions that could have realized the changes observed in the chronogram corresponding to the descritized observation data. 
 \label{sec:ph-generation}
 
 %\subsection{Asynchronous and non-deterministic networks}
@@ -22,12 +28,6 @@
 %\end{definition}
 
 \subsection{Algorithm}
-In this section we propose an algorithm to construct and/or revise Process Hitting models.
-We assume that new time series data observation are provided as a {\it chronogram} of size $T$:
-the value of each variable is given for each time step $t$, $0 \leq t \leq T$, through a time interval discretization (see example \pref{fig:discretization}).   
-This algorithm takes as input a Process Hitting and a observation data of genes evolutions of this network.
-Knowing the genes' influences (or assuming all possible influences),
-this algorithm will generate a model or complete the input model by adding the delayed actions that could have realized the changes observed in the chronogram corresponding to the descritized observation data. \\
 Algorithm \ref{alg:PHG_ap} shows the pseudo code of our algorithm.
 If the observations are perfect, it will generate all possible actions that can realize each change observed.
 Because of the delayed semantics, it is not possible to decide whether an action is correct or not.
@@ -38,10 +38,10 @@ Otherwise, if the observation data is not perfect, we refine the output model by
 %Otherwise, if the observations are not perfect, we can merge actions by replacing the one that only differs by the delay by one action whose delay is the average one. The intuition is that, in practice, if there are enough observations, the delay of those actions should tend to the real value.
 
 \begin{algorithm}
-	\caption{PH-Generation($PH$,$Time Series Data$,$Influences Graph$,$Indegree$)}
+	\caption{PH-Generation($PH$,$Time Series Data$,$Regulation Influences$,$Indegree$)}
 	\label{alg:PHG_ap}
 	\begin{itemize}
-		\item INPUT: a Process Hitting $PH$, the time series data observations of the genes of $PH$ as a chronogram $C$, the graph of the genes influences $R$ and a maximal in-degree $i$ per action.
+		\item INPUT: a Process Hitting $PH$, the time series data observations of the genes of $PH$ as a chronogram $C$, the set of the genes regulation influences $R$ and a maximal in-degree $i$ per action.
 
 		%\item Step 1: Sample the chronogram for each gene at each time step.
 		\item Let $A := \emptyset$
@@ -49,7 +49,7 @@ Otherwise, if the observation data is not perfect, we refine the output model by
 
 		\begin{itemize}
 			\item[-] Let $D$ be the delay since the last time a gene has changed,
-			\item[-] Generate all actions with delay $D$ which involve all subsets of size $n$ of the genes $S_1, \ldots, S_n$ having an influence on $G$ from the graph $R$, with $n \leq i$:
+			\item[-] Generate all actions with delay $D$ which involve all subsets of size $n$ of the genes $S_1, \ldots, S_n$ having an influence on $G$ from the set $R$, with $n \leq i$:
 			$$a := action(S_1,P_1,\ldots, S_n,P_n, G, P, P', D)$$
 			\item[-] Add all actions $a$ in $A$
 		\end{itemize}
@@ -176,6 +176,6 @@ Otherwise, if the observation data is not perfect, we refine the output model by
 
 %dire que les action du PH de base sont aussi merge dans le step 2. Et qu'elle peuvent etre donnee de base dans l'apprentissage
 % Dire que les influences doivent etre donnees, ou alors on genere toutes les influences possibles.
-
-\subsection{Filters}
-\textcolor{red}{TODO: partie théorique des filtres: les definitions}
+%
+%\subsection{Filters}
+%\textcolor{red}{TODO: partie theorique des filtres: les definitions}
