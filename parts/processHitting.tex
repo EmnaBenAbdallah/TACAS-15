@@ -146,9 +146,9 @@ $$ \forall t' \in [t, t+D ] : \textsf{state}(\PH, t')=s \text{ and } \textsf{sta
 \end{definition}
 
 %If $\PH = (\PHs,\PHl,\PHap)$ is a dense-time Process Hitting and $s \in \PHl$ be the state of $\PH$ at time $t$ .
-We propose at \pref{def:semantic}, the semantic of the timed PH that we base on to generate the corresponding model to the given observations. Indeed it means that if there is no action in $\PHa$ that is playable in $s$ the state of the system remains $s$ for all time $t'$ with $t' > t$.% (i.e. steady state).
-If $h = \PHfrappedelay{A}{D}{b_i}{b_j}$ is the choosen playable actions in $s$ then the state of $\PH$ is $s$ during $D$ time steps and at the time step $t+D$
-the \emph{successor} of $s$ denoted by $(s \play h)$ is obtained at the step $t+D$.
+We propose at \pref{def:semantic}, the semantic of the timed PH in which we base on to generate the corresponding model to the given observations. Indeed it means that if there is no action in $\PHa$ that is playable in $s$ the state of the system remains $s$ for all time $t'$ with $t' > t$.% (i.e. steady state).
+If $h = \PHfrappedelay{A}{D}{b_i}{b_j}$ is the choosen playable action in $s$ then the state of $\PH$ is $s$ during $D$ time steps and at the time step $t+D$
+the \emph{successor} of $s$ denoted by $(s \play h)$ is obtained.
 
 Even if there already exists a few hybrid formalisms, we chose to propose this extension of the PH framework for several reasons.
 First, PH is a general framework that,
