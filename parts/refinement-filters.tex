@@ -3,11 +3,11 @@ The Algorithm \ref{alg:PHG_ap} returns a PH model with a set of actions compelet
 But in practice this set of actions can be further refined using a background knowledge.
 The following filtering operation can help to reduce the complexity of the model learned/revised.
 
-\subsection{$1^{st}$ filter: priority on given model}
+\subsection{$1^{st}$ Filter: priority to given model}
 
 If we want to minimize the number of actions added to the input PH  model ($PH_{ini}$)we can consider that the actions of this PH are more trustable than the generated one. Thus generated action(s) explaining a change can already be explained by a given action in $PH_{ini}$. So that the generated action(s) can be discarded:\\
-\begin{definition}[Filter: Priority on given model]
-Let $T$ be the set of time steps of the given time series data, we have $\forall t \in T$ such that $\exists$  \texttt{change(t)}, we have:
+\begin{definition}[Filter: Priority to given model]
+Let $T$ be the set of time points of the given time series data, we have $\forall t \in T$ such that $\exists$  \texttt{change(t)}, we have:
 \begin{itemize}
 \item[-] \texttt{$H_c$}: the set of candidate actions generated to explain the \texttt{change(t)}
 \item[-] \texttt{$H_{ini}$:} the set of actions of $PH_{ini}$ that can realize the \texttt{change(t)}
@@ -26,7 +26,7 @@ we start with $H_{ini}=\{h_{ini}=\PHfrappedelay{a_0}{1}{z_1}{z_0}\}$,
 since the action $h_{ini}$ can realize $change(6)$ there is no need to generate new ones.
 Here, $H_{change(6)}$ will only consist of $h_{ini} = h_6$. So $h_7=\PHfrappedelay{b_0}{1}{z_1}{z_0}$ and $h_8=\PHfrappedelay{a_0 \wedge b_0 }{1}{z_1}{z_0} $ will be discarded. 
 
-\subsection{$2^{nd}$ filter: strict influences (activator or inhibitor)}
+\subsection{$2^{nd}$ Filter: strict influences (activator or inhibitor)}
 
 If knowledge about strict influences is given it can be used to discard actions that are conflicting with those influences.
 For example, if we know that a gene $"a"$ influences a gene $"b"$ and that $"a"$ can only inhibit $"b"$, then the actions using $"a"$ as an active hitter to increase the value of $"b"$ are inconsistent and can be discarded.
@@ -40,7 +40,7 @@ In our running example (\pref{sec:case_study}), if we know that $"b"$ is an inhi
 Here, we have an observation where $"z"$ is activated in $change(2)$ where its value switches from $z_0$ to $z_1$.
 We know that $"a"$ has an influence on $"z"$ but as an inhibitor not as an activator thus the actions $h_2=\PHfrappedelay{b_1}{2}{z_0}{z_1}$ and $h_3=\PHfrappedelay{a_0 \wedge b_1 }{2}{z_0}{z_1}$ will be discarded.
 
-\subsection{$3^rd$ filter: delay merging}
+\subsection{$3^{rd}$ Filter: delay merging}
 
 When the time information of observation is not perfect, the same regulation interaction may append with different delay.
 One simple solution to deal with such input can be to simply agregate action that differ only by their delays.
