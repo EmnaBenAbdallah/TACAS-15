@@ -1,7 +1,7 @@
 % Completion of PH network (Circadian clock)
 
-\section{Revision of PH networks}
-\label{sec:ph-completion}
+\section{Generation of PH models}
+\label{sec:ph-generation}
 
 %\subsection{Asynchronous and non-deterministic networks}
 
@@ -23,46 +23,45 @@
 
 \subsection{Algorithm}
 In this section we propose an algorithm to construct and/or revise Process Hitting models.
-We assume that new observation data are provided as a {\it chronogram} of size $T$:
-the value of each variable is given for each time step $t$, $0 \leq t \leq T$, through a time interval discretization.   
-This algorithm takes as input a Process Hitting and a chronogram of genes evolutions of this network.
+We assume that new time series data observation are provided as a {\it chronogram} of size $T$:
+the value of each variable is given for each time step $t$, $0 \leq t \leq T$, through a time interval discretization (see example \pref{fig:discretization}).   
+This algorithm takes as input a Process Hitting and a observation data of genes evolutions of this network.
 Knowing the genes' influences (or assuming all possible influences),
-this algorithm will complete the input network by adding the delayed actions that could have realized the changes observed in the chronogram.
-%The algorithm we propose will revise the input Process hitting by adding actions and changing the delay of existing ones.
-Algorithm \ref{alg:PHC_ap} shows the pseudo code of our algorithm.
+this algorithm will generate a model or complete the input model by adding the delayed actions that could have realized the changes observed in the chronogram corresponding to the descritized observation data. \\
+Algorithm \ref{alg:PHG_ap} shows the pseudo code of our algorithm.
 If the observations are perfect, it will generate all possible actions that can realize each change observed.
 Because of the delayed semantics, it is not possible to decide whether an action is correct or not.
 But we can output the minimal sets of actions necessary to realize the changes observed.
 %Like in Algorithm \ref{alg:ASPHC}, it generates all possible actions that can realize each change observed.
 %But then, since observation are not perfect, we cannot safely removed non-consistent actions.
-If the observations are not perfect, we can merge actions by replacing the one that only differs by the delay by one action whose delay is the average one.
-The intuition is that, in practice, if there are enough observations, the delay of those actions should tend to the real value.
+Otherwise, if the observation data is not perfect, we refine the output model by filters taking into account almost the different possible perturbations. These filters are more detailes in \pref{sec:filters}.
+%Otherwise, if the observations are not perfect, we can merge actions by replacing the one that only differs by the delay by one action whose delay is the average one. The intuition is that, in practice, if there are enough observations, the delay of those actions should tend to the real value.
 
 \begin{algorithm}
-	\caption{PH-Completion($PH,Chronogram,Influences,indegree$)}
-	\label{alg:PHC_ap}
+	\caption{PH-Generation($PH$,$Time Series Data$,$Influences Graph$,$Indegree$)}
+	\label{alg:PHG_ap}
 	\begin{itemize}
-		\item INPUT: a Process Hitting $PH$, a chronogram $C$ of the genes evolution of $PH$, the genes influences and a maximal action in-degree $i$.
+		\item INPUT: a Process Hitting $PH$, the time series data observations of the genes of $PH$ as a chronogram $C$, the graph of the genes influences $R$ and a maximal in-degree $i$ per action.
 
 		%\item Step 1: Sample the chronogram for each gene at each time step.
 		\item Let $A := \emptyset$
-		\item Step 1: For each time where a gene $G$ changes its value from $P$ to $P'$ in $C$:
+		\item Step 1: For each time step where a gene $G$ changes its value from $P$ to $P'$ in the chronogram $C$:
 
 		\begin{itemize}
-			\item[-] Let $D$ be the delay since the last time a gene has changed.
-			\item[-] Generate all actions with delay $D$ which involve all subsets of size $i$ of the genes $S_1, \ldots, S_n$ having an influence on $G$:
+			\item[-] Let $D$ be the delay since the last time a gene has changed,
+			\item[-] Generate all actions with delay $D$ which involve all subsets of size $n$ of the genes $S_1, \ldots, S_n$ having an influence on $G$ from the graph $R$, with $n \leq i$:
 			$$a := action(S_1,P_1,\ldots, S_n,P_n, G, P, P', D)$$
-			\item Add all action $a$ in $A$
+			\item[-] Add all actions $a$ in $A$
 		\end{itemize}
 		
 		%\item Step 2 (optional): Merge each action with the same hitters, $S_1,P_1,\ldots, S_n,P_n$ and the same target, $G, P, P'$,
 		%into one action where the delay is the average.
 		
-		\item Step 2: Generate $S$ the set of all subsets of actions of $A$ that realize $C$ such that $A$ is minimal:
+		\item Step 2: Generate $S$ the set of all subsets of actions of $A$ that realizes $C$ such that $A$ is minimal:
 			$$\forall A \in S, \not \exists A' \in S, A' \subset A$$
 			%\item Atmost one delay per action: $\forall h \in A$, where $h = \PHfrappedelay{A}{D}{b_j}{b_k}$, $\not \exists h' \in A$, such that $h' = \PHfrappedelay{A}{D'}{b_j}{b_k}, D \not = D'$
 			
-		\item OUTPUT: S a set of completed Process Hittings that realize the chronogram.
+		\item OUTPUT: $S$ a set of completed Process Hitting model that realizes the observations.
 	\end{itemize}
 \end{algorithm}
 
@@ -108,7 +107,7 @@ The intuition is that, in practice, if there are enough observations, the delay 
 	\label{th:correct}
 	Let $PH$ be a Process Hitting, $C$ be a chronogram of the genes of $PH$ and $A$ be the set of actions of $PH$ that realized the chronogram $C$.
 	Let $PH'$ be a Process Hitting and $A'$ be the set of actions of $PH'$ such that $A' \subseteq A$.
-	Given $PH'$ and $C$ as input, Algorithm \ref{alg:PHC_ap} is complete:
+	Given $PH'$ and $C$ as input, Algorithm \ref{alg:PHG_ap} is complete:
 	it will output a set of process hitting $S$,
 	such that $\exists PH'' \in S$ with $A''$ the set of actions of $PH''$ such that $A'' = A' \cup A$.
 	\begin{proof}
@@ -140,7 +139,7 @@ The intuition is that, in practice, if there are enough observations, the delay 
 	%The complexity of completing $PH$ by generating actions from the observations of $C$ with Algorithm \ref{alg:PHC} belongs to $O(c\times i^S + (T-c) \times  P \times  i^S)$ that is bound by
 	%$O(T^2\times P^{S+2})$.
 	The memory use of our algorithm belongs to $O(T \times  P \times  i^S \times  2^{T\times  P \times  i^S})$ that is bound by $O(T \times  P^{S+1} \times  2^{T\times  P^{S+1}})$.
-	The complexity of completing $PH$ by generating actions from the observations of $C$ with Algorithm \ref{alg:PHC_ap} belongs to
+	The complexity of completing $PH$ by generating actions from the observations of $C$ with Algorithm \ref{alg:PHG_ap} belongs to
 	$O(c\times i^S + (2^{2\times T\times  P \times  i^S} + $c$ \times  2^{T\times  P \times  i^S})$ that is bound by $O(2^{3\times T\times P^{S+1}})$.
 	\begin{proof}
 		% Memory
@@ -163,7 +162,7 @@ The intuition is that, in practice, if there are enough observations, the delay 
 		%Sampling the chronogram (step 1) is linear in the number of time step and then bound by $O(T)$.
 		%Merging the actions at step 2 is polynomial in the number of actions and the complexity of this operation belongs to $O((T\times P\times i^S)^2)$.
 		The complexity of this algorithm belongs to $O(c\times i^S)$.
-		Since $0 \leq i \leq P$ and $0 \leq c \leq T$ the complexity of Algorithm \ref{alg:PHC_ap} is bound by $O(T\times P^S) = (T\times P^S)$.
+		Since $0 \leq i \leq P$ and $0 \leq c \leq T$ the complexity of Algorithm \ref{alg:PHG_ap} is bound by $O(T\times P^S) = (T\times P^S)$.
 		
 		Generating all minimal subsets of actions $A$ of $PH'$ that realize $C$ can require to generate at most $2^{T\times  P \times  i^S}$ set of rules.
 		Each set has to be compared with the others to keep only the minimal ones, which costs $O(2^{2\times T\times  P \times  i^S})$.
@@ -178,4 +177,5 @@ The intuition is that, in practice, if there are enough observations, the delay 
 %dire que les action du PH de base sont aussi merge dans le step 2. Et qu'elle peuvent etre donnee de base dans l'apprentissage
 % Dire que les influences doivent etre donnees, ou alors on genere toutes les influences possibles.
 
-
+\subsection{Filters}
+\textcolor{red}{TODO: partie théorique des filtres: les definitions}
