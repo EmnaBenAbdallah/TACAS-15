@@ -33,7 +33,7 @@ If knowledge about strict influences is given it can be used to discard actions 
 For example, if we know that a gene $"a"$ influences a gene $"b"$ and that $"a"$ can only inhibit $"b"$, then the actions using $"a"$ as an active hitter to increase the value of $"b"$ are inconsistent and can be discarded.
 
 \begin{definition}[Filter: Strict influences]
-Let $PH=(\PHs,\PHl,\PHa_p)$ be the input model, $\forall h \in \PHa_p$ such $h=\PHfrappedelay{A}{D}{b_n}{b_m}$, with $ A \in \PHl^{\diamond}, | A| \leq i$ ($i$: indegree of the model) we have :\\
+Let $PH=(\PHs,\PHl,\PHa_p)$ be the input model, $\forall h \in \PHa_p$ such $h=\PHfrappedelay{A}{D}{b_n}{b_m}$, with $ A \in \PHl^{\diamond}, | A| \leq i$ ($i$: indegree of the model) and a gene $G \in \PHs$, we have :\\
 If $n < m$ (resp. $n > m$ ): if $\exists G_k \in A $ with $G_k \in \PHl_G $ such that $G \xrightarrow{(-)} b$ and $\nexists G \xrightarrow{(+)} b$ (resp. $G \xrightarrow{(+)} b$ and $\nexists G \xrightarrow{(-)} b$) and $k \neq 0$ then $h$ can be discarded.
 \end{definition}
 
