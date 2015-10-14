@@ -15,7 +15,7 @@
 
 \subsection{Settings}
 
-	Each of time serie include different perturbations that are maintained all time along during the first 10 time points and applied to at most 3 genes.
+	Each time serie includes different perturbations that are maintained all time along during the first 10 time points and applied to at most 3 genes.
 	In this setting, a perturbation means a significant increase or decrease of the gene expression.
 	%
 	In the raw data of the time series, gene expression values are given as real number between 0 and 1.
@@ -24,15 +24,15 @@
 	we compute the average value of the gene expression among all data of a time series,
 	then the values between the average and the maximal/minimal value are divided into as many levels.
 	Discretizing the data according to the average value of expression is expected to reduce the impact of perturbation on the discretization and thus on the model learned.
-	In this experiment we want to assess the scalability of our approach in practice.
+	But in this experiment our goal is to assess the scalability of our approach in practice rather than evaluating the model learned when facing perturbated data.
 	Figure \ref{fig:run_time} show the impact of both indegree of action and discretization level on run time.
 
 \subsection{Results}
 
 	\begin{figure} \centering
-	\includegraphics[width=0.33\linewidth]{images/net5}% TODO
-	\includegraphics[width=0.33\linewidth]{images/net5}% TODO
-	\includegraphics[width=0.33\linewidth]{images/net3}
+	\includegraphics[width=0.32\linewidth]{images/net1}
+	\includegraphics[width=0.32\linewidth]{images/net2}
+	\includegraphics[width=0.32\linewidth]{images/net3}
 	\includegraphics[width=0.33\linewidth]{images/net4}
 	\includegraphics[width=0.33\linewidth]{images/net5}
 	\label{fig:run_time}
