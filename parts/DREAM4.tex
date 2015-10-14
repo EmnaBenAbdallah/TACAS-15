@@ -7,7 +7,7 @@
 	In this paper, we focus on the datasets coming from DREAM4.
 	The input data that we tackle here consists of the following:
 	5 different systems each composed of 100 genes, all coming from E. coli and yeast networks. For every such system,
-	the available data are the following: (i) 11 time series data with 21 time points; (ii) steady state at wild type;
+	the available data are the following: (i) 10 time series data with 21 time points and 1000 is the duration of each time series; (ii) steady state for wild type;
 	(iii) steady states after knocking out each gene;
 	(iv) steady states after knocking down each gene (i.e. forcing its transcription rate at 50\%);
 	(v) steady states after some random multifactorial perturbations. We processed all the data.
@@ -25,7 +25,7 @@
 	then the values between the average and the maximal/minimal value are divided into as many levels.
 	Discretizing the data according to the average value of expression is expected to reduce the impact of perturbation on the discretization and thus on the model learned.
 	But in this experiment our goal is to assess the scalability of our approach in practice rather than evaluating the model learned when facing perturbated data.
-	Figure \ref{fig:run_time} show the impact of both indegree of action and discretization level on run time.
+	Figure \ref{fig:run_time} shows the impact of both indegree per action and discretization level on run time.
 
 \subsection{Results}
 
@@ -36,10 +36,10 @@
 	\includegraphics[width=0.33\linewidth]{images/net4}
 	\includegraphics[width=0.33\linewidth]{images/net5}
 	\label{fig:run_time}
-	\caption{Evolution of run time on processing different network time series data from DREAM4 varying indregree of actions and discretization levels.}
+	\caption{Evolution of run time on processing different model time series data from DREAM4 varying indregree of actions and discretization levels. These tests were performed on 3 GHz Intel Core i7 processor with 16 Go of RAM. }
 	\end{figure}
 
-	In the results optained from the experimentations of our algorithm on the time series data of the DREAM4 we can see the exponential influence on the run time of indegree of action considered as well as the level of discretization chosen.
-	But it also show that in practice our approach can tackle big network, here 100 genes.
+	In the results optained from the experimentations of our algorithm on the time series data of the DREAM4 we can see the exponential influence on the run time of indegree of action considered as well as the level of discretization chosen for all the 5 different networks.
+	But it also shows that in practice our approach can tackle big network, here 100 genes.
 
-\textcolor{red}{COMMENT Tony: Faudrais testé en augmentant le nombre de time points si possible. Egalement avec un indegree de 3, 4 jusqu'a ce que ça soit trop long.}
+%\textcolor{red}{COMMENT Tony: Faudrais testé en augmentant le nombre de time points si possible. Egalement avec un indegree de 3, 4 jusqu'a ce que ça soit trop long.}
