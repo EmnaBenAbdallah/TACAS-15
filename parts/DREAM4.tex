@@ -41,5 +41,9 @@
 
 	In the results optained from the experimentations of our algorithm on the time series data of the DREAM4 we can see the exponential influence on the run time of indegree of action considered as well as the level of discretization chosen for all the 5 different networks.
 	But it also shows that in practice our approach can tackle big network, here 100 genes.
+	It is important to note that here the real influences are given as background knowledge, 
+	thus it greatly reduce the quantity of action generated to explain each change.
+	Without knowledge about those influence, the algorithm can be run considering that all gene can be influences by every others.
+	But here, the quantity of combination of influences is so big that processing only one time series discretized into two levels of expression with an indegree of two takes more that 12 hours to process. In practice, on big network, accessing to information about genes influence is crucial for the efficiency of the method.
 
 %\textcolor{red}{COMMENT Tony: Faudrais testé en augmentant le nombre de time points si possible. Egalement avec un indegree de 3, 4 jusqu'a ce que ça soit trop long.}
