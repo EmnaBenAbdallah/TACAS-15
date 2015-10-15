@@ -146,6 +146,11 @@ Let $t, t'$ and ($t+D$) be time steps, then the semantics of $\PH$ can be expres
 $$ \forall t' \in [t, t+D ] : \textsf{state}(\PH, t')=s \text{ and } \textsf{state}(\PH, t+D)=(s \play h).$$
 \end{definition}
 
+\begin{figure}
+\includegraphics[width=1\linewidth]{images/semantic-timed-PH}
+\caption{Semantic of Process Hitting ($\PH = (\PHs,\PHl,\PHap)$) with timed-actions such that $\textsf{state}(\PH, t_i)=s_i$, $ \forall t_0 \geq t_i \leq t_n$, and $t_n$ is the maximum time step in the time series data. We mean by $start(action(h_i))$ that the action $h_i$ starts playing so that the system state won't change, from $s_i$ to $s_{i+1}$, until $h_i$ finishes presented here by $finish(action(h_i))$.}
+\end{figure}
+
 %If $\PH = (\PHs,\PHl,\PHap)$ is a dense-time Process Hitting and $s \in \PHl$ be the state of $\PH$ at time $t$ .
 We propose in \pref{def:semantic}, the semantics of the timed PH in which we base on to generate the corresponding model to the given observations. Indeed it means that if we consider a PH model $\PH = (\PHs,\PHl,\PHap)$, and if there is no action in $\PHa$ that is playable in $s$, with $s=\textsf{state}(\PH, t)$, the state of the system remains $s$ for all time $t'$ with $t' > t$ (i.e. steady state). If $h = \PHfrappedelay{A}{D}{b_i}{b_j}$ is the choosen playable action in $s$ then the state of $\PH$ is $s$ during $D$ time steps and at the time step $t+D$
 the \emph{successor} of $s$ denoted by $(s \play h)$ is obtained.
