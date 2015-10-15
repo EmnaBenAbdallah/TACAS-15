@@ -1,31 +1,17 @@
 % Completion of PH network (Circadian clock)
 
 \section{Generation of PH models}
+\label{sec:ph-generation}
+
 In this section we propose an algorithm to construct and/or revise Process Hitting models.
 We assume that new time series data observation are provided as a {\it chronogram} of size $T$:
 the value of each variable is given for each time step $t$, $0 \leq t \leq T$, through a time interval discretization (see example \pref{fig:discretization}).   
 This algorithm takes as input a Process Hitting and a observation data of genes evolutions of this network.
 Knowing the genes' influences (or assuming all possible influences),
-this algorithm will generate a model or complete the input model by adding the delayed actions that could have realized the changes observed in the chronogram corresponding to the descritized observation data. 
-\label{sec:ph-generation}
+this algorithm will generate a model or complete the input model by adding the delayed actions that could have realized the state changes observed through the chronogram corresponding to the descritized observation data.
 
-%\subsection{Asynchronous and non-deterministic networks}
 
-%\subsection{Formalization}
 
-%\begin{definition}[Applicability]
-%	Let $C$ be a chronogram and $a$ be an action of a Process Hitting $PH$ such that $a = action(S_1,P_1,\ldots, S_n,P_n, G, P, P', D)$.
-%	Let $t$ be a time step of $C$, the action $a$ is {\it applicable} at $t$,
-%	iff $\forall t', 0 \leq t-D < t' < t$, the active process of each sort $S_i$ is $P_i$ and the active process of the sort $G$ is $P$.
-	% there is a gene change at $t-D$, no gene change during the interP $[t-D,t]$ and all $S_i$ has the value $P_i$ from $t-D$ to $t$.
-%\end{definition}
-
-% TODO: Préciser quelque part que si au moins une action est applicable a un instant $t$, il doit y avoir un changement
-
-%\begin{definition}[Consistency]
-%	Let $C$ be a chronogram and $a$ be an action of a Process Hitting $PH$ such that $a = action(S_1,P_1,\ldots, S_n,P_n, G, P, P', D)$.
-%	The action $a$ is {\it consistent} with $C$, if there is a gene change at each time step $t$ of $C$ where $a$ can be applied.
-%\end{definition}
 
 \subsection{Algorithm}
 Algorithm \ref{alg:PHG_ap} shows the pseudo code of our algorithm.
@@ -34,7 +20,7 @@ Because of the delayed semantics, it is not possible to decide whether an action
 But we can output the minimal sets of actions necessary to realize the changes observed.
 %Like in Algorithm \ref{alg:ASPHC}, it generates all possible actions that can realize each change observed.
 %But then, since observation are not perfect, we cannot safely removed non-consistent actions.
-Otherwise, if the observation data is not perfect, we refine the output model by filters taking into account almost the different possible perturbations. These filters are more detailes in \pref{sec:filters}.
+Otherwise, if the observation data is not perfect, we refine the output model by filters taking into account almost the different possible perturbations. These filters are more detailes in \pref{sec:refinement-filters}.
 %Otherwise, if the observations are not perfect, we can merge actions by replacing the one that only differs by the delay by one action whose delay is the average one. The intuition is that, in practice, if there are enough observations, the delay of those actions should tend to the real value.
 
 \begin{algorithm}
