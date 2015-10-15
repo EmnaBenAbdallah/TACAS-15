@@ -52,7 +52,7 @@ $\forall h_1, h_2,..., h_k \in H$ such that $h_1=\PHfrappedelay{A}{D_1}{a_n}{a_m
 \texttt{fusion} all actions $h_1, h_2,..., h_k$ into one action $h$: $$h=\PHfrappedelay{A}{D_{average}}{a_n}{a_m}, \hspace{0.7cm} \text{such that,} \hspace{0.7cm} D_{average} = \frac{\sum_{i=1}^k D_{i}}{k} $$
 \end{definition}
 
-For example, lets suppose that we came out with two actions $h_1=\PHfrappedelay{a_0}{2}{z_0}{z_1}$ and $h_2=\PHfrappedelay{a_0 \wedge b_1 }{4}{z_0}{z_1}$, they will be merged into $h=\PHfrappedelay{b_1}{3}{z_0}{z_1}$.
+For example, let us suppose that we came out with two actions $h_1=\PHfrappedelay{a_0}{2}{z_0}{z_1}$ and $h_2=\PHfrappedelay{a_0 \wedge b_1 }{4}{z_0}{z_1}$, they will be merged into $h=\PHfrappedelay{b_1}{3}{z_0}{z_1}$.
 If input data are perfect, usage of this merging is totally unsafe and can lead to a set of actions that cannot produce any of the observed changes in the worst case.
 The intuition behind this method is to give a first idea of how to cope with big amount of real data which are not perfect.
 The idea is that if enough observations are provided, the delay of the action will be more precise.

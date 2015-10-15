@@ -33,11 +33,11 @@ First, the method uses discritised observations as an input (\ie chronogram), th
 \includegraphics[width =0.31\linewidth]{images/courbes/gene-z-disc-change.pdf}
 \caption{Examples of the discretization of continous time series data into bi-valued chronograms.
 Abscisse represents time and ordinate the gene expression level.
-The expression level is discretized according to a treshold fixed to the half of the gene expression value in this example. A \texttt{change(t)} is a time step in which we observe a change in the gene expression level. }
+The expression level is discretized according to a threshold fixed to the half of the gene expression value in this example. A \texttt{change(t)} is a time step in which we observe a change in the gene expression level. }
 \label{fig:discretization}
 \end{figure}
 
-We can summarrize our method in the following steps:
+We can summarize our method in the following steps:
 \begin{itemize}
 \item[-] Detection of changes
 \item[-] Computation of the interactions possibly reponsible of thoses changes
@@ -115,7 +115,7 @@ $H_{change(3)} = \{ h_4=\PHfrappedelay{a_0}{1}{a_0}{a_1}  \}$. \\
 $H_{change(5)} = \{ h_5=\PHfrappedelay{a_1}{1}{a_1}{a_0}  \}$. \\
 $H_{change(6)} = \{ h_6=\PHfrappedelay{a_0}{1}{z_1}{z_0}$ , $  h_7=\PHfrappedelay{b_0}{1}{z_1}{z_0}, h_8=\PHfrappedelay{a_0 \wedge b_0 }{1}{z_1}{z_0} \}$. \\
 
-At this stage of the process, all canditates actions are consistent with all observations and given regulation influences.
+At this stage of the process, all candidates actions are consistent with all observations and given regulation influences.
 Until now the method used ensured completeness: here we have the complete set of consistent action that can explain the observations.
 
 

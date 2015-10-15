@@ -3,13 +3,13 @@
 \section{Generation of PH models}
 \label{sec:ph-generation}
 
-This algorithm takes as input a Process Hitting and a observation data of genes evolutions of this network.
+This algorithm takes as input a Process Hitting and observation data of genes evolutions of this network.
 Knowing the genes' influences (or assuming all possible influences),
 this algorithm will generate a model or complete the input model by adding the delayed actions that could have realized the state changes observed through the observation data.
 
 \subsection{Algorithm}
-n this section we propose an algorithm to construct and/or revise Process Hitting models.
-We assume that new time series data observation are provided as a {\it chronogram} of size $T$:
+In this section we propose an algorithm to construct and/or revise Process Hitting models.
+We assume that new time series data observations are provided as a {\it chronogram} of size $T$:
 the value of each variable is given for each time step $t$, $0 \leq t \leq T$, through a time interval discretization (see example \pref{fig:discretization}).   
 
 \begin{definition}[Chronogram]
@@ -104,7 +104,7 @@ Otherwise, if the observation data is not perfect, we refine the output model by
 	Let $PH'$ be a Process Hitting and $A'$ be the set of actions of $PH'$ such that $A' \subseteq A$.
 	Given $PH'$ and $C$ as input, Algorithm \ref{alg:PHG_ap} is complete:
 	it will output a set of process hitting $S$,
-	such that $\exists PH'' \in S$ with $A''$ the set of actions of $PH''$ such that $A'' = A' \cup A$.
+	such that $\exists PH'' \in S$ with $A''$ the set of actions of $PH''$ such that $A = A' \cup A''$.
 	\begin{proof}
 	Let us suppose that the algorithm is not complete, then there is an action $a \in A$ that realized $C$ and $a \not \in A''$.
 	After step 1.2, $PH''$ contains all actions that can realized each gene change.
@@ -133,7 +133,7 @@ Otherwise, if the observation data is not perfect, we refine the output model by
 	Let $C$ be a chronogram of the genes of $PH$ over $T$ units of time, such that $c$ is the number of gene change of $C$.
 	%The complexity of completing $PH$ by generating actions from the observations of $C$ with Algorithm \ref{alg:PHC} belongs to $O(c\times i^S + (T-c) \times  P \times  i^S)$ that is bound by
 	%$O(T^2\times P^{S+2})$.
-	The memory use of our algorithm belongs to $O(T \times  P \times  i^S \times  2^{T\times  P \times  i^S})$ that is bound by $O(T \times  P^{S+1} \times  2^{T\times  P^{S+1}})$.
+	The memory use of our algorithm belongs to $O(T \times  P \times  i^S \times  2^{T\times  P \times  i^S})$ that is bounded by $O(T \times  P^{S+1} \times  2^{T\times  P^{S+1}})$.
 	The complexity of completing $PH$ by generating actions from the observations of $C$ with Algorithm \ref{alg:PHG_ap} belongs to
 	$O(c\times i^S + (2^{2\times T\times  P \times  i^S} + $c$ \times  2^{T\times  P \times  i^S})$ that is bound by $O(2^{3\times T\times P^{S+1}})$.
 	\begin{proof}
