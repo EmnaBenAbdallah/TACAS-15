@@ -138,12 +138,12 @@ $A \subseteq s$ and $b_i \in s$ (\ie$ \forall a_i \in A, \PHget{s}{a} = a_i$ and
 %
 %
 The dynamics of the Process Hitting is based on asynchronized evolution (only one action can be played at a time) so we have: $$\PHget{(s \play h)}{b} = b_j \text{ and } \forall c \in \PHs, c \neq b \Rightarrow \PHget{(s \play h)}{c}=\PHget{s}{c}$$
-The resulting state of the $\PH$ model ($\PH = (\PHs,\PHl,\PHap)$) after playing an action $h$ in a state $s$ at step $t$ is called a \emph{successor} of $s$ and is denoted by $(s \play h)$. We denote this succession of states by: $\textsf{state}(\PH, t)=s$ and $\textsf{state}(\PH, t+D)=(s \play h)$. The resulting state of a sort $a \in \PHs$ by $\PHget{s}{a}$. 
+The resulting state of the $\PH$ model ($\PH = (\PHs,\PHl,\PHap)$) after playing a delayed action $h$ in a state $s$ at step $t$ is called a \emph{successor} of $s$ and is denoted by $(s \play h)$. We denote this succession of states by: $\textsf{state}(\PH, t)=s$ and $\textsf{state}(\PH, t+D)=(s \play h)$ with $delay(h)=D$. The resulting state of a sort $a \in \PHs$ by $\PHget{s}{a}$. 
 
 \begin{definition}[Semantics of Process Hitting with Timed Actions]
 \label{def:semantic}
 Let $\PH = (\PHs,\PHl,\PHap)$ be a Process Hitting with timed actions. Let $\textsf{state}(\PH, t)=s$ with $s \in \PHl$ and $H_t^s$ be the set of playable timed actions in $s$ at time step $t$. If no action is being played at $t$ and $H_t^s \not = \emptyset$, then exactly one action $h \in H_t^s$ has to be played. Let $D \in \mathds{R}^+$ and $h = \PHfrappedelay{A}{D}{b_i}{b_j}$ and $t_1$ and $t_2$ be time steps with $t_2 - t_1=D$ so that the semantics of $\PH$ can be expressed as follows:
-$$ \forall t \in [t_1, t_2 ] : \textsf{state}(\PH, t_1)=s \text{ and } \textsf{state}(\PH, t_2)=(s \play h).  $$
+$$ \forall t \in [t_1, t_2 [ : \textsf{state}(\PH, t)=s \text{ and } \textsf{state}(\PH, t_2)=(s \play h).  $$
 \end{definition}
 
 \begin{figure}
