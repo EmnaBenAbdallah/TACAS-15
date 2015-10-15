@@ -3,17 +3,24 @@
 \section{Generation of PH models}
 \label{sec:ph-generation}
 
-In this section we propose an algorithm to construct and/or revise Process Hitting models.
-We assume that new time series data observation are provided as a {\it chronogram} of size $T$:
-the value of each variable is given for each time step $t$, $0 \leq t \leq T$, through a time interval discretization (see example \pref{fig:discretization}).   
 This algorithm takes as input a Process Hitting and a observation data of genes evolutions of this network.
 Knowing the genes' influences (or assuming all possible influences),
-this algorithm will generate a model or complete the input model by adding the delayed actions that could have realized the state changes observed through the chronogram corresponding to the descritized observation data.
-
-
-
+this algorithm will generate a model or complete the input model by adding the delayed actions that could have realized the state changes observed through the observation data.
 
 \subsection{Algorithm}
+n this section we propose an algorithm to construct and/or revise Process Hitting models.
+We assume that new time series data observation are provided as a {\it chronogram} of size $T$:
+the value of each variable is given for each time step $t$, $0 \leq t \leq T$, through a time interval discretization (see example \pref{fig:discretization}).   
+
+\begin{definition}[Chronogram]
+A chronogram is the discritized time evolution of the time series data of each component of biological regulatory networks. It is presented by the fonction below: \\
+
+$$\mathds{R}^+ \longmapsto \mathds{N}^+$$
+$$ [0,T] \subset {N}^+ \longmapsto \{0,1,..., n\}$$
+
+with $T$ is the maximum time point called the size of the chronogram and $n$ is the maximum level of discretization.
+\end{definition}
+
 Algorithm \ref{alg:PHG_ap} shows the pseudo code of our algorithm.
 If the observations are perfect, it will generate all possible actions that can realize each change observed.
 Because of the delayed semantics, it is not possible to decide whether an action is correct or not.
@@ -23,15 +30,7 @@ But we can output the minimal sets of actions necessary to realize the changes o
 Otherwise, if the observation data is not perfect, we refine the output model by filters taking into account almost the different possible perturbations. These filters are more detailes in \pref{sec:refinement-filters}.
 %Otherwise, if the observations are not perfect, we can merge actions by replacing the one that only differs by the delay by one action whose delay is the average one. The intuition is that, in practice, if there are enough observations, the delay of those actions should tend to the real value.
 
-\begin{definition}[Chronogram]
-A chronogram is the discritized time evolution of the time series data of biological regulatory networks. It is presented by the fonction below: \\
 
-$$\mathds{R}^+ \longmapsto \mathds{N}^+$$
-$$ [0,T] \in \mathds{N}^+ \longmapsto \{0,1,..., n\}$$
-
-with $T$ is the size of the chronogram and $n$ is the maximum level of discretization.
-
-\end{definition}
 
 \begin{algorithm}
 	\caption{PH-Generation($PH$,$Time Series Data$,$Regulation Influences$,$Indegree$)}
