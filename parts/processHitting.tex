@@ -142,8 +142,8 @@ The resulting state of the $\PH$ model ($\PH = (\PHs,\PHl,\PHap)$) after playing
 
 \begin{definition}[Semantics of Process Hitting with Timed Actions]
 \label{def:semantic}
-Let $\PH = (\PHs,\PHl,\PHap)$ be a Process Hitting with timed actions. Let $\textsf{state}(\PH, t)=s$ with $s \in \PHl$ and $H_t^s$ be the set of playable timed actions in $s$ at time step $t$. If no action is being played at $t$ and $H_t^s \not = \emptyset$, then exactly one action $h \in H_t^s$ has to be played. Let $D \in \mathds{R}^+$ and $h = \PHfrappedelay{A}{D}{b_i}{b_j}$ and $t_1$ and $t_2$ be time steps with $t_2 - t_1=D$ so that the semantics of $\PH$ can be expressed as follows:
-$$ \forall t \in [t_1, t_2 [ : \textsf{state}(\PH, t)=s \text{ and } \textsf{state}(\PH, t_2)=(s \play h).  $$
+Let $\PH = (\PHs,\PHl,\PHap)$ be a Process Hitting with timed actions. Let $\textsf{state}(\PH, t)=s$ with $s \in \PHl$ and $H_t^s$ be the set of playable timed actions in $s$ at time step $t$. If no action is being played at $t$ and $H_t^s \not = \emptyset$, then exactly one action $h \in H_t^s$ has to be played. Let $D \in \mathds{R}^+$ and $h = \PHfrappedelay{A}{D}{b_i}{b_j}$ and $t_D$ be a time steps such that $t_D - t = D$ so that the semantics of $\PH$ can be expressed as follows:
+$$ \forall t' \in [t, t_D [ : \textsf{state}(\PH, t')=s \text{ and } \textsf{state}(\PH, t_D)=(s \play h).  $$
 \end{definition}
 
 \begin{figure}
