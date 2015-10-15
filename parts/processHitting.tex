@@ -143,7 +143,7 @@ The resulting state of the $\PH$ model ($\PH = (\PHs,\PHl,\PHap)$) after playing
 \begin{definition}[Semantics of a Process Hitting with Timed Actions]
 \label{def:semantic}
 Let $\PH = (\PHs,\PHl,\PHap)$ be a Process Hitting with timed actions and $\textsf{state}(\PH, t)=s$ be the state of $\PH$ at time step $t$ with $s \in \PHl$. Let $H$ be the set of playable timed action in $s$.
-Let $t, t'$ and ($t+D$) be time steps, if no action are being played at $t$ and $H \not = \emptyset$, an action $h \in H$ has to be chosen to be played.Let $h = \PHfrappedelay{A}{D}{b_i}{b_j}$ so that the semantics of $\PH$ can be expressed as follows:
+Let $t, t'$ and ($t+D$) be time steps, if no action are being played at $t$ and $H \not = \emptyset$, exactly one action $h \in H$ has to be chosen to be played. Let $h = \PHfrappedelay{A}{D}{b_i}{b_j}$ so that the semantics of $\PH$ can be expressed as follows:
 $$ \forall t' \in [t, t+D ] : \textsf{state}(\PH, t')=s \text{ and } \textsf{state}(\PH, t+D)=(s \play h).$$
 \end{definition}
 
