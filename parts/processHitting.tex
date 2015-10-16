@@ -114,7 +114,7 @@ The way these new actions should be used is described as follows.
 \begin{definition} [Playable Timed Action]
 \label{def:playableAction}
 Let $\PH = (\PHs,\PHl,\PHap)$ be a PH with timed actions and $s \in \PHl$ a state of $\PH$.
-We say that the timed action $h = \PHfrappedelay{A}{D}{b_i}{b_j}$, with $D \geq 0 $,
+We say that the timed action $h = \PHfrappedelay{A}{D}{b_i}{b_j}$, with $D \in \mathds{R}^+$,
 is \emph{playable in a state $s$} if and only if
 $A \subseteq s$ and $b_i \in s$ (\ie$ \forall a_i \in A, \PHget{s}{a} = a_i$ and $\PHget{s}{b}=b_i$).
 \end{definition}
