@@ -127,10 +127,10 @@ The resulting state of the $\PH$ model ($\PH = (\PHs,\PHl,\PHap)$) after playing
 Let $\PH = (\PHs,\PHl,\PHap)$ be a Process Hitting with timed actions. Let $\textsf{state}(\PH, t)=s$ with $s \in \PHl$ and $H_t^s$ be the set of playable timed actions in $s$ at time step $t$. If no action is being played at $t$ and $H_t^s \not = \emptyset$, then exactly one action $h \in H_t^s$ has to be played. Let $D \in \mathds{R}^+$ and $h = \PHfrappedelay{A}{D}{b_i}{b_j}$ and $t_D$ be a time steps such that $t_D - t = D$ so that the semantics of $\PH$ can be expressed as follows:
 $$ \forall t' \in [t, t_D [ : \textsf{state}(\PH, t')=s \text{ and } \textsf{state}(\PH, t_D)=(s \play h).  $$
 \end{definition}
-
+\vspace{-0.7cm}
 \begin{figure}
 \includegraphics[width=1\linewidth]{images/semantic-timed-PH}
-\caption{Semantics of Process Hitting ($\PH = (\PHs,\PHl,\PHap)$) with timed actions such that $\textsf{state}(\PH, t_i)=s_i$, $ \forall t_0 \leq t_i \leq t_n$, and $t_n$ is the maximum time step in the time series data. We mean by $start(action(h_i))$ that the action $h_i$ starts playing so that the system state won't change, from $s_i$ to $s_{i+1}$, until $h_i$ finishestimed actions presented here by $finish(action(h_i))$.}
+\caption{Semantics of Process Hitting ($\PH = (\PHs,\PHl,\PHap)$) with timed actions such that $\textsf{state}(\PH, t_i)=s_i$, $ \forall$ $t_0 \leq t_i \leq t_n$, with $t_0$ and $t_n$ are respectively the minimum and the maximum time step in the time series data. We mean by $start(action(h_i))$ that the timed action $h_i$ starts playing so that the system state won't change until $h_i$ finishes after $D_i$ time steps with $delay(h_i)=D_i$ presented here by $finish(action(h_i))$.}
 \end{figure}
 
 %If $\PH = (\PHs,\PHl,\PHap)$ is a dense-time Process Hitting and $s \in \PHl$ be the state of $\PH$ at time $t$ .
