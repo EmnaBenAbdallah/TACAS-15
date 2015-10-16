@@ -76,12 +76,12 @@ Regarding the circadian clock, a chronogram of 100 data points is about 4 days o
 	\caption{Evolution of run time on processing different model time series data from DREAM4 varying indregree of actions and discretization levels. These tests were performed on processor: 3 GHz Intel Core i7 with 16 Go of RAM. }
 	\end{figure}
 
-	In the results optained from the experimentations of our algorithm on the time series data of the DREAM4 we can see the exponential influence on the run time of indegree of action considered as well as the level of discretization chosen for all the 5 different networks.
+	In the results obtained from the experimentations of our algorithm on the time series data of the DREAM4 we can see the exponential influence on the run time of indegree of action considered as well as the level of discretization chosen for all the 5 different networks.
 	But it also shows that in practice our approach can tackle big network, here 100 genes.
 	It is important to note that here the real influences are given as background knowledge, 
-	thus it greatly reduce the quantity of action generated to explain each change.
-	Without knowledge about those influence, the algorithm can be run considering that all gene can be influenced by all other genes.
-	But here, the quantity of combination of influences is so big that processing only one time series discretized into two levels of expression with an indegree of two takes more that 12 hours to process. In practice, on big network, accessing to information about genes influences is crucial for the efficiency of this method.
+	thus it greatly reduces the quantity of action generated to explain each change.
+	Without knowledge about those influences, the algorithm can be run considering that all genes can be influenced by all other genes.
+	But here, the quantity of combination of influences is so huge that processing only one time series discretized into two levels of expression with an indegree of two takes more that 12 hours to process. In practice, on large networks (more than 40 genes), accessing to information about genes influences is crucial for the efficiency of this method.
 	
 %	The current version does not provide guaranty about the soundness of the model learned.
 %	More practical study of the method is required to design methods to provide guaranty about output.
