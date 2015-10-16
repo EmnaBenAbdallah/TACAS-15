@@ -21,14 +21,14 @@ where $a_i$, $b_j$, $b_k$ are processes of sorts $a$ and $b$,
 called respectively \emph{hitter}, \emph{target} and
 \emph{bounce} of the action. 
 We also call a \emph{self-hit} any action whose hitter and target sorts are the same,
-that is, of the form: $\PHfrappe{a_i}{a_i}{a_k}$. The original Process Hitting framework contains only actions with one hitter but it should be noted that during these last years it was gradually enriched with new type of sorts like cooperative sorts and new actions like plural actions \cite{folschette-phd-14} (at least 2 hitters), actions with priority \cite{FPMR13-CS2Bio} and actions with delay.
+that is, of the form: $\PHfrappe{a_i}{a_i}{a_k}$. The original Process Hitting framework contains only actions with one hitter but it should be noted that during these last years it was gradually enriched with new type of sorts like cooperative sorts (the same role of a multiplex) and new actions like plural actions \cite{folschette-phd-14} (at least 2 hitters), actions with priority \cite{FPMR13-CS2Bio} and now actions with delays tackled in this paper.
 
 The PH is therefore a restriction of asynchronous automata, where each transition
 changes the local state of exactly one automaton,
 and is triggered by the local states of at most two distinct automata.
 This restriction in the form of the actions was chosen to permit
 the development of efficient static analysis methods
-based on abstract interpretation \cite{PMR12-MSCS}.
+based on abstract interpretation \cite{PMR12-MSCS} and recently exhaustive dynamic analysis \cite{benabdallah2015}.
 
 \begin{definition}[Process Hitting]\label{def:PH}
   A \emph{Process Hitting} is a triple $(\PHs,\PHl,\PHa_p)$ where:
@@ -72,24 +72,24 @@ $\PHl_z = \{z_0, z_1, z_2\}$.
 \TState{a_1,b_1,z_0}
 \end{tikzpicture}
 \caption{
-A PH model example with three sorts: $a$, $b$ and $z$ ($a$ is either at level 0 or 1, $b$ at either level 0, 1 or 2 and $z$ at either level 0, or 1). Boxes represent the \emph{sorts} (network components), circles represent the \emph{processes} (component levels), and the 3 \emph{actions} that model the dynamics behavior are depicted by pairs of arrows in solid and dotted lines. A self-action:  $\PHfrappe{a_1}{a_1}{a_0}$, a mono-action:  $\PHfrappe{b_0}{z_1}{z_0}$ and plural action  $\PHfrappe{a_0 \wedge b_1}{z_0}{z_1}$.  The grayed processes stand for the possible initial state: $\PHstate{a_1, b_1, z_0}$.
+A PH model example with three sorts: $a$, $b$ and $z$ ($a$ is either at level 0 or 1, $b$ at either level 0, 1 or 2 and $z$ at either level 0, or 1). Boxes represent the \emph{sorts} (network components), circles represent the \emph{processes} (component levels), and the 3 \emph{actions} that model the dynamics are depicted by pairs of arrows in solid and dotted lines. A self-action:  $\PHfrappe{a_1}{a_1}{a_0}$, a mono-action:  $\PHfrappe{b_0}{z_1}{z_0}$ and a plural action  $\PHfrappe{a_0 \wedge b_1}{z_0}{z_1}$.  The grayed processes stand for the possible initial state: $\PHstate{a_1, b_1, z_0}$.
 }
 \end{figure}
 \end{example}
 A state of a given PH consists in a set of active processes containing a single process of each sort.
 The active process of a given sort $a \in \PHs$ in a state $s \in \PHl$
 is noted $\PHget{s}{a}$.
-For any given process $a_i$ we also note: $a_i \in s$ if and only if $\PHget{s}{a} = a_i$. The dynamics of the PH is performed thanks to the actions. Indeed, the transition from one state $s_1$ to its successor $s_2$ is done when there is a playable action (definition \ref{def:playableAction}) at $s_1$. After each transition only one sort, or one component, changes its level from one process to another.
+For any given process $a_i$ we also note: $a_i \in s$ if and only if $\PHget{s}{a} = a_i$. For each sort, it cannot have more than one active process at one state. The dynamics of the PH is performed thanks to the actions. Indeed, the transition from one state $s_1$ to its successor $s_2$ is done when there is a playable action (definition \ref{def:playableAction}) at $s_1$. After each transition only one sort, or one component, changes its level from one process to another.
 %
 %In some cases it is necessary to represent a reaction of a set of components on one component. For example in the bio-chemical reactions :$X \xrightarrow{Y} Z$ or  $X + Y \rightarrow Y + Z$, where $ X $ is a set of reactives, $ Y $ a set of catalysts and $ Z $ a set of products. % In PH the evolution is asynchronous so we consider that $Z$ is one component. 
 %Plural actions permit to represent this kind of reactions in PH. The plural is made up of two sets of processes of different sorts, which represent all the hitters and the bounces. For example the bio-chemical reaction above would be presented in PH by:  $\PHfrappe{X_1 \wedge Y_1}{Z_0}{Z_1}$, if we consider $X$, $Y$ and $Z$ are the sorts, each one is either at level 0 (if it is abscent) or 1 (if it is present).
 
-In some dynamics it is crucial to have information about the delays between two events (two states of a PH). Classic actions cannot exhibit this information: we just know chronology, i.e., that the state $s_2$ will be after $s_1$ in the next step but it is not possible to know chronometry, i.e., how much time this transition takes to occur. We propose to add the delay in the action attributes which is responsable of the transition between the two states. That means that this action needs to be played during a specific time so that the system does not change its state (\pref{def:TimedAction}).
+In some dynamics it is crucial to have information about the delays between two events (two states of a PH). Classic actions, described above, cannot exhibit this information: we just know chronology, i.e., that the state $s_2$ will be after $s_1$ in the next step but it is not possible to know chronometry, i.e., how much time this transition takes to occur. We propose to add the delay in the action attributes which is responsable of the transition between the two states. That means that this timed action (\pref{def:TimedAction}) needs to be played during a specific time so that the system does not change its state until it finishes.
 
 \begin{definition}[Timed action]
 \label{def:TimedAction}
-Let $\PH = (\PHs,\PHl,\PHa)$ be a process hitting and $\PHl^{\diamond}$ be the set of all the sub-states of $\PHl$.
-A timed action of $\PH$ is a action with a delay $D$: $\PHfrappedelay{A}{D}{b_i}{b_j}$ where $D \in \mathds{R}^+$, $A \in \PHl^{\diamond}$, and $b_i$, $b_j$ where  $b_i \not = b_j$ are two processes of the target sort $b$. If $b_i \in A$, $A=b_i$.
+Let $\PH = (\PHs,\PHl,\PHa_tp)$ be a timed process hitting and $\PHl^{\diamond}$ be the set of all the sub-states of $\PHl$.
+A timed action $h$ of $\PH$ is an action with a delay $D \in \mathds{R}^+$: $$\PHfrappedelay{A}{D}{b_i}{b_j}$$ where $A \in \PHl^{\diamond}$, and $b_i$, $b_j \in \PHl_b$ with  $b_i \not = b_j$ and if $b_i \in A$, $A=b_i$.
 \end{definition}
 To model biological networks, we used the PH framework with timed actions (\pref{def:PH-timed}). Indeed, in the biological models that we studied we need to present not only the cooperation between the components to influence another one (action), but also the time that this action need to take place (delays). 
 \begin{definition}[Process Hitting with Timed Actions]
