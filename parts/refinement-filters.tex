@@ -8,7 +8,7 @@ The following filtering operation can help to reduce the complexity of the model
 
 If we want to minimize the number of actions added to the input PH  model ($PH_{ini}$)we can consider that the actions of this PH are more trustable than the generated one. Thus generated action(s) explaining a change can already be explained by a given action in $PH_{ini}$. So that the generated action(s) can be discarded:\\
 \begin{definition}[Filter: Priority to given model]
-Let $T$ be the set of time points of the given time series data, we have $\forall t \in T$ such that $\exists$  \texttt{change(t)}, we have:
+Let $T$ be the set of time points of the given time series data, $\forall t \in T$ such that $\exists$  \texttt{change(t)}, we have:
 \begin{itemize}
 \item[-] \texttt{$H_c$}: the set of candidate actions generated to explain the \texttt{change(t)}
 \item[-] \texttt{$H_{ini}$:} the set of actions of $PH_{ini}$ that can realize the \texttt{change(t)}
@@ -33,8 +33,8 @@ If knowledge about strict influences is given it can be used to discard actions 
 For example, if we know that a gene $"a"$ influences a gene $"b"$ and that $"a"$ can only inhibit $"b"$, then the actions using $"a"$ as an active hitter to increase the value of $"b"$ are inconsistent and can be discarded.
 
 \begin{definition}[Filter: Strict influences]
-Let $PH=(\PHs,\PHl,\PHa_p)$ be the input model, $\forall h \in \PHa_p$ such $h=\PHfrappedelay{A}{D}{b_n}{b_m}$, with $ A \in \PHl^{\diamond}, | A| \leq i$ ($i$: indegree of the model) and a gene $G \in \PHs$, we have :\\
-If $n < m$ (resp. $n > m$ ): if $\exists G_k \in A $ with $G_k \in \PHl_G $ such that $G \xrightarrow{(-)} b$ and $\nexists G \xrightarrow{(+)} b$ (resp. $G \xrightarrow{(+)} b$ and $\nexists G \xrightarrow{(-)} b$) and $k \neq 0$ then $h$ can be discarded.
+Let $PH=(\PHs,\PHl,\PHa_{tp})$ be the input model, $\forall h \in \PHa_{tp}$ such $h=\PHfrappedelay{A}{D}{b_n}{b_m}$, with $ A \in \PHl^{\diamond}, | A| \leq i$ $\wedge b \in \PHs \wedge$ $b_j \neq b_k$ $\wedge$ $D \in \mathds{R}^+$ ($i$: indegree of the model). Let $G \in \PHs$ we have :\\
+If $\exists G_k \in A $ such that $G \xrightarrow{(-)} b$ $\wedge$ $\nexists G \xrightarrow{(+)} b$ (resp. $G \xrightarrow{(+)} b$ and $\nexists G \xrightarrow{(-)} b$) $\wedge$ $k \neq 0$ $\wedge$ $n < m$ (resp. $n > m$ ), then $h$ can be discarded.
 \end{definition}
 
 In our running example (\pref{sec:case_study}), if we know that $"b"$ is an inhibitor of $"z"$, all actions where $"b"$ is used to activate $"z"$ can be discarded.
@@ -48,7 +48,7 @@ One simple solution to deal with such input can be to simply agregate action tha
 We can merge each action with the same hitters, $S_1,P_1,\ldots, S_n,P_n$ the same target, $G, P$ and the same bound $G, P'$ into one action where the delay is the average.
 
 \begin{definition}[Filter: Delay merging]
-$\forall h_1, h_2,..., h_k \in H$ such that $h_1=\PHfrappedelay{A}{D_1}{a_n}{a_m}$, $h_2=\PHfrappedelay{A}{D_2}{a_n}{a_m}$, ..., $h_k=\PHfrappedelay{A}{D_k}{a_n}{a_m}$ with $ A \in \PHl^{\diamond}$, $a_n, a_m \in \PHl_a$ and $D_1 \neq D_2 \neq ... \neq D_k$ then : \\
+$\forall h_1, h_2,..., h_k \in H$ such that $h_1=\PHfrappedelay{A}{D_1}{a_n}{a_m}$, $h_2=\PHfrappedelay{A}{D_2}{a_n}{a_m}$, ..., $h_k=\PHfrappedelay{A}{D_k}{a_n}{a_m}$ with $ A \in \PHl^{\diamond}$, $a_n, a_m \in \PHl_a$ and $D_1 \neq D_2 \neq ... \neq D_k \in \mathds{R}^+$ then : \\
 \texttt{fusion} all actions $h_1, h_2,..., h_k$ into one action $h$: $$h=\PHfrappedelay{A}{D_{average}}{a_n}{a_m}, \hspace{0.7cm} \text{such that,} \hspace{0.7cm} D_{average} = \frac{\sum_{i=1}^k D_{i}}{k} $$
 \end{definition}
 
